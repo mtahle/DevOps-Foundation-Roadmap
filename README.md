@@ -226,35 +226,29 @@ Apache performance tuning
 
 ## Containers/ Docker & Orchestration:
 
-
 #### Intro to Docker
 
+[Docker explained simply](https://www.youtube.com/watch?v=_trJf3GbZXg)
 
-
-
-
+[Docker Tutorial for Beginners [FULL COURSE in 3 Hours]](https://www.youtube.com/watch?v=3c-iBn73dDE)
 
 #### Dockerizing static website
 
 [Steps for Deploying a Static HTML Site with Docker and Nginx](https://www.dailysmarty.com/posts/steps-for-deploying-a-static-html-site-with-docker-and-nginx)
 
-
 #### Dockerizing Laravel application
 
 [How to Dockerize a Laravel application | by Charbel El-Jalkh | CAMS Engineering](https://engineering.carsguide.com.au/how-to-dockerize-a-laravel-application-77a24ba669c5)
-
 
 #### Docker swarm
 
 [Introduction to Docker Swarm in Container Orchestration | Engineering Education (EngEd) Program | Section](https://www.section.io/engineering-education/introduction-to-docker-swarm-in-container-orchestration/)
 
-
 #### Kubernetes
 
+[Kubernetes Crash Course for Absolute Beginners [NEW]](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 
-
-
-
+[Kubernetes explained simply, and why you should learn it!](https://www.youtube.com/watch?v=glFE28QT1HI)
 
 ##### HELM
 
@@ -265,11 +259,7 @@ Apache performance tuning
 [Installing Helm](https://helm.sh/docs/intro/install/)
 
 
-## 
-
-
 ## Automation
-
 
 ### CI/CD concepts
 
@@ -315,3 +305,23 @@ Apache performance tuning
 [Production Environment: Difference Between Development, Stage, And Production - DEV Community](https://dev.to/flippedcoding/difference-between-development-stage-and-production-d0p)
 
 [Deployment environment - Wikipedia](https://en.wikipedia.org/wiki/Deployment_environment)
+
+
+
+## Podcast Links بودكاست ديف أوبس في السيارة
+
+
+[Google Podcast](https://bit.ly/devops-google)
+
+[Apple Podcast](https://bit.ly/devops-apple)
+
+[Spotify](https://bit.ly/devops-spotify)
+
+[Spreaker & All other platforms](https://bit.ly/devops-spreaker)
+
+[Facebook Page](https://bit.ly/devops-fb-page)
+
+[Facebook Group](https://bit.ly/devops-geeks)
+
+[Instagram](https://bit.ly/devops-insta)
+
