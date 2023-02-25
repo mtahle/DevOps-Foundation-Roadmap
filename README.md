@@ -308,7 +308,7 @@ Apache performance tuning
 
 
 ## Podcast Links بودكاست ديف أوبس في السيارة
-[Anchor] (https://anchor.fm/devops-on-the-go/)
+[Anchor](https://anchor.fm/devops-on-the-go/)
 
 [Google Podcast](https://bit.ly/devops-google)
 
