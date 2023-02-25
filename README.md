@@ -1,7 +1,6 @@
-
 ## Overview
 
-This is a reference for some topics mentioned in the 5th episode of DevOps on the Go podcast. It is not a complete guide but it helps the beginners to find their way to the most important topics in the DevOps engineering field. To get the most benefit I encourage you to follow the sequence mentioned in the podcast episode. If you are totally new to the DevOps you can start by watching this youtube video [01 Introduction To DevOps | مقدمة للـ DevOps - By Mujahed Al Tahleh | Arabic](https://www.youtube.com/watch?v=451Ltd2bx28). 
+This is a reference for some topics mentioned in the [5th episode of DevOps on the Go podcast (Arabic)](https://anchor.fm/devops-on-the-go/episodes/05-------e1v1eh6). It is not a complete guide but it helps the beginners to find their way to the most important topics in the DevOps engineering field. To get the most benefit I encourage you to follow the sequence mentioned in the podcast episode. If you are totally new to the DevOps you can start by watching this youtube video [01 Introduction To DevOps | مقدمة للـ DevOps - By Mujahed Al Tahleh | Arabic](https://www.youtube.com/watch?v=451Ltd2bx28). 
 
 ## Concepts
 
@@ -309,7 +308,7 @@ Apache performance tuning
 
 
 ## Podcast Links بودكاست ديف أوبس في السيارة
-
+[Anchor] (https://anchor.fm/devops-on-the-go/)
 
 [Google Podcast](https://bit.ly/devops-google)
 
