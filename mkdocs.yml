@@ -1,12 +1,12 @@
-site_name: DevOps Roadmap
-site_description: 'Complete DevOps learning roadmap for Arabic speakers - من المبتدئ إلى الخبير'
-site_author: 'Mujahed Al Tahleh'
-site_url: 'https://devops-roadmap.com'
+site_name: DevOps Foundation Roadmap
+site_description: Complete DevOps learning roadmap - From Beginner to Expert
+site_author: Mujahed Altahleh
+site_url: https://mtahle.github.io/DevOps-Foundation-Roadmap
 
 # Repository
-repo_name: 'devops-roadmap'
-repo_url: 'https://github.com/mujahed-altahleh/devops-roadmap'
-edit_uri: 'edit/main/docs/'
+repo_name: mtahle/DevOps-Foundation-Roadmap
+repo_url: https://github.com/mtahle/DevOps-Foundation-Roadmap
+edit_uri: edit/main/docs/
 
 # Theme Configuration
 theme:
@@ -43,10 +43,12 @@ theme:
     - toc.follow
     - toc.integrate
 
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
   icon:
-    repo: fontawesome/brands/github
-    edit: material/pencil
-    view: material/eye
+    logo: logo
 
 # Extensions
 markdown_extensions:
@@ -76,8 +78,8 @@ markdown_extensions:
   - pymdownx.magiclink:
       normalize_issue_symbols: true
       repo_url_shorthand: true
-      user: mujahed-altahleh
-      repo: devops-roadmap
+      user: mtahle
+      repo: DevOps-Foundation-Roadmap
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets
@@ -115,35 +117,53 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/mujahed-altahleh
-    - icon: fontawesome/brands/facebook
-      link: https://bit.ly/devops-fb-page
-    - icon: fontawesome/brands/instagram
-      link: https://bit.ly/devops-insta
-    - icon: fontawesome/solid/podcast
-      link: https://anchor.fm/devops-on-the-go/
+      link: https://github.com/mtahle
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/mtahle
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/mtahle
 
-# Navigation
+# Page tree
 nav:
-  - Home: index.md
-  - Concepts:
-    - concepts/internet-basics.md
-    - concepts/web-development.md
-    - concepts/hosting.md
-    - concepts/protocols.md
-    - concepts/ssl.md
-    - concepts/domains-dns.md
-  - Linux Servers:
-    - linux/introduction.md
-    - linux/troubleshooting-tools.md
-  - Containers & Docker:
-    - containers/introduction.md
-  - Automation:
-    - automation/introduction.md
-  - Monitoring:
-    - monitoring/introduction.md
-  - Resources:
-    - resources/podcast.md
+  - الرئيسية: index.md
+  - المفاهيم الأساسية:
+    - concepts/index.md
+    - نظرة عامة على الـ DevOps: concepts/overview.md
+    - الثقافة والممارسات: concepts/culture.md
+    - دورة حياة التطوير: concepts/lifecycle.md
+  - لينكس والأساسيات:
+    - linux/index.md
+    - مقدمة في لينكس: linux/introduction.md
+    - سطر الأوامر: linux/command-line.md
+    - إدارة النظام: linux/system-admin.md
+    - الشبكات: linux/networking.md
+    - الأمان: linux/security.md
+  - الحاويات والتنسيق:
+    - containers/index.md
+    - مقدمة في الحاويات: containers/introduction.md
+    - Docker المتقدم: containers/advanced-docker.md
+    - Kubernetes: containers/kubernetes.md
+    - أمان الحاويات: containers/security.md
+    - المراقبة: containers/monitoring.md
+  - الأتمتة والنشر:
+    - automation/index.md
+    - مقدمة في CI/CD: automation/cicd.md
+    - Jenkins: automation/jenkins.md
+    - GitHub Actions: automation/github-actions.md
+    - GitLab CI: automation/gitlab-ci.md
+    - Infrastructure as Code: automation/iac.md
+  - المراقبة والملاحظة:
+    - monitoring/index.md
+    - أساسيات المراقبة: monitoring/fundamentals.md
+    - Prometheus و Grafana: monitoring/prometheus-grafana.md
+    - تجميع السجلات: monitoring/logging.md
+    - التتبع الموزع: monitoring/tracing.md
+  - الموارد والمراجع:
+    - resources/index.md
+    - الكتب المفيدة: resources/books.md
+    - الدورات التدريبية: resources/courses.md
+    - المدونات والمواقع: resources/blogs.md
+    - الشهادات: resources/certifications.md
 
 # Copyright
-copyright: Copyright &copy; 2024 Mujahed Al Tahleh - DevOps on the Go
+copyright: Copyright &copy; 2023 محمد طحلة
