@@ -1,0 +1,136 @@
+/* Custom styling for DevOps Roadmap documentation */
+
+/* Arabic text support */
+.md-typeset {
+  direction: ltr;
+}
+
+/* Custom color scheme for DevOps theme */
+:root {
+  --md-primary-fg-color: #1565c0;
+  --md-primary-fg-color--light: #42a5f5;
+  --md-primary-fg-color--dark: #0d47a1;
+  --md-accent-fg-color: #3f51b5;
+}
+
+/* Code block enhancements */
+.md-typeset code {
+  padding: .1em .3em;
+  border-radius: .2em;
+  background-color: var(--md-code-bg-color);
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+
+/* Custom admonition styles for DevOps content */
+.md-typeset .admonition.devops {
+  border-left: .2rem solid #00bcd4;
+}
+
+.md-typeset .admonition.devops > .admonition-title {
+  background-color: rgba(0, 188, 212, .1);
+}
+
+.md-typeset .admonition.devops > .admonition-title::before {
+  background-color: #00bcd4;
+  mask-image: var(--md-admonition-icon--tip);
+}
+
+/* Navigation enhancements */
+.md-nav__title {
+  font-weight: 600;
+}
+
+/* Table styling improvements */
+.md-typeset table:not([class]) {
+  border-radius: 0.3em;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+}
+
+/* Button styling */
+.md-button {
+  border-radius: 0.3em;
+  transition: all 0.2s ease;
+}
+
+.md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Mermaid diagram styling */
+.mermaid {
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* Custom icons for different content types */
+.md-typeset .podcast-link::before {
+  content: "🎙️ ";
+  margin-right: 0.3em;
+}
+
+.md-typeset .youtube-link::before {
+  content: "📹 ";
+  margin-right: 0.3em;
+}
+
+.md-typeset .documentation-link::before {
+  content: "📚 ";
+  margin-right: 0.3em;
+}
+
+/* Arabic content support */
+.arabic-content {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Noto Sans Arabic', 'Arial Unicode MS', sans-serif;
+}
+
+/* Progress indicator for learning paths */
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.progress-step {
+  flex: 1;
+  text-align: center;
+  padding: 0.5em;
+  background-color: #f5f5f5;
+  margin: 0 0.2em;
+  border-radius: 0.3em;
+  position: relative;
+}
+
+.progress-step.completed {
+  background-color: #4caf50;
+  color: white;
+}
+
+.progress-step.current {
+  background-color: #2196f3;
+  color: white;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 768px) {
+  .md-typeset table {
+    font-size: 0.8em;
+  }
+  
+  .progress-indicator {
+    flex-direction: column;
+  }
+  
+  .progress-step {
+    margin: 0.2em 0;
+  }
+}

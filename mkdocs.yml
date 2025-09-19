@@ -1,0 +1,149 @@
+site_name: DevOps Roadmap
+site_description: 'Complete DevOps learning roadmap for Arabic speakers - من المبتدئ إلى الخبير'
+site_author: 'Mujahed Al Tahleh'
+site_url: 'https://devops-roadmap.com'
+
+# Repository
+repo_name: 'devops-roadmap'
+repo_url: 'https://github.com/mujahed-altahleh/devops-roadmap'
+edit_uri: 'edit/main/docs/'
+
+# Theme Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.action.view
+    - toc.follow
+    - toc.integrate
+
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: mujahed-altahleh
+      repo: devops-roadmap
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+
+# Extra CSS and JavaScript
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Extra
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mujahed-altahleh
+    - icon: fontawesome/brands/facebook
+      link: https://bit.ly/devops-fb-page
+    - icon: fontawesome/brands/instagram
+      link: https://bit.ly/devops-insta
+    - icon: fontawesome/solid/podcast
+      link: https://anchor.fm/devops-on-the-go/
+
+# Navigation
+nav:
+  - Home: index.md
+  - Concepts:
+    - concepts/internet-basics.md
+    - concepts/web-development.md
+    - concepts/hosting.md
+    - concepts/protocols.md
+    - concepts/ssl.md
+    - concepts/domains-dns.md
+  - Linux Servers:
+    - linux/introduction.md
+    - linux/troubleshooting-tools.md
+  - Containers & Docker:
+    - containers/introduction.md
+  - Automation:
+    - automation/introduction.md
+  - Monitoring:
+    - monitoring/introduction.md
+  - Resources:
+    - resources/podcast.md
+
+# Copyright
+copyright: Copyright &copy; 2024 Mujahed Al Tahleh - DevOps on the Go
