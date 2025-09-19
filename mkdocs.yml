@@ -123,47 +123,47 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/mtahle
 
-# Page tree
+# Navigation
 nav:
-  - الرئيسية: index.md
-  - المفاهيم الأساسية:
+  - Home: index.md
+  - Fundamentals:
     - concepts/index.md
-    - نظرة عامة على الـ DevOps: concepts/overview.md
-    - الثقافة والممارسات: concepts/culture.md
-    - دورة حياة التطوير: concepts/lifecycle.md
-  - لينكس والأساسيات:
+    - DevOps Overview: concepts/overview.md
+    - Culture & Practices: concepts/culture.md
+    - Development Lifecycle: concepts/lifecycle.md
+  - Linux & Basics:
     - linux/index.md
-    - مقدمة في لينكس: linux/introduction.md
-    - سطر الأوامر: linux/command-line.md
-    - إدارة النظام: linux/system-admin.md
-    - الشبكات: linux/networking.md
-    - الأمان: linux/security.md
-  - الحاويات والتنسيق:
+    - Linux Introduction: linux/introduction.md
+    - Command Line: linux/command-line.md
+    - System Administration: linux/system-admin.md
+    - Networking: linux/networking.md
+    - Security: linux/security.md
+  - Containers & Orchestration:
     - containers/index.md
-    - مقدمة في الحاويات: containers/introduction.md
-    - Docker المتقدم: containers/advanced-docker.md
+    - Container Introduction: containers/introduction.md
+    - Advanced Docker: containers/advanced-docker.md
     - Kubernetes: containers/kubernetes.md
-    - أمان الحاويات: containers/security.md
-    - المراقبة: containers/monitoring.md
-  - الأتمتة والنشر:
+    - Container Security: containers/security.md
+    - Monitoring: containers/monitoring.md
+  - Automation & CI/CD:
     - automation/index.md
-    - مقدمة في CI/CD: automation/cicd.md
+    - CI/CD Introduction: automation/cicd.md
     - Jenkins: automation/jenkins.md
     - GitHub Actions: automation/github-actions.md
     - GitLab CI: automation/gitlab-ci.md
     - Infrastructure as Code: automation/iac.md
-  - المراقبة والملاحظة:
+  - Monitoring & Observability:
     - monitoring/index.md
-    - أساسيات المراقبة: monitoring/fundamentals.md
-    - Prometheus و Grafana: monitoring/prometheus-grafana.md
-    - تجميع السجلات: monitoring/logging.md
-    - التتبع الموزع: monitoring/tracing.md
-  - الموارد والمراجع:
+    - Monitoring Fundamentals: monitoring/fundamentals.md
+    - Prometheus & Grafana: monitoring/prometheus-grafana.md
+    - Log Aggregation: monitoring/logging.md
+    - Distributed Tracing: monitoring/tracing.md
+  - Resources & References:
     - resources/index.md
-    - الكتب المفيدة: resources/books.md
-    - الدورات التدريبية: resources/courses.md
-    - المدونات والمواقع: resources/blogs.md
-    - الشهادات: resources/certifications.md
+    - Useful Books: resources/books.md
+    - Training Courses: resources/courses.md
+    - Blogs & Websites: resources/blogs.md
+    - Certifications: resources/certifications.md
 
 # Copyright
-copyright: Copyright &copy; 2023 محمد طحلة
+copyright: Copyright &copy; 2024 Mujahed Altahleh
