@@ -39,27 +39,29 @@ DNS (Domain Name System) is often called the "phonebook of the internet." It tra
 
 ### DNS Hierarchy
 
-    graph TD
-        subgraph DNS_Hierarchy
-            A[Root (.)] --> B[gTLD (.com)]
-            A --> C[ccTLD (.uk)]
-            A --> D[New gTLD (.org)]
-            
-            B --> E[example.com]
-            E --> F[www.example.com]
-            E --> G[api.example.com]
-            E --> H[mail.example.com]
-        end
+```mermaid
+graph TD
+    subgraph DNS_Hierarchy
+        A[Root (.)] --> B[gTLD (.com)]
+        A --> C[ccTLD (.uk)]
+        A --> D[New gTLD (.org)]
         
-        classDef root fill:#ff9999
-        classDef tld fill:#99ccff
-        classDef domain fill:#99ff99
-        classDef sub fill:#ffff99
-        
-        class A root
-        class B,C,D tld
-        class E domain
-        class F,G,H sub
+        B --> E[example.com]
+        E --> F[www.example.com]
+        E --> G[api.example.com]
+        E --> H[mail.example.com]
+    end
+    
+    classDef root fill:#ff9999
+    classDef tld fill:#99ccff
+    classDef domain fill:#99ff99
+    classDef sub fill:#ffff99
+    
+    class A root
+    class B,C,D tld
+    class E domain
+    class F,G,H sub
+```
 
 ## Domain Name Structure
 
@@ -170,17 +172,19 @@ DNS (Domain Name System) is often called the "phonebook of the internet." It tra
 
 #### **Advanced Record Types**
 
-    flowchart LR
-        A[DNS Query] --> B{Record Type}
-        B --> C[A/AAAA<br/>Direct IP]
-        B --> D[CNAME<br/>Alias]
-        B --> E[SRV<br/>Service Discovery]
-        B --> F[CAA<br/>Certificate Authority]
-        B --> G[DNAME<br/>Subtree Delegation]
-        
-        style C fill:#e8f5e8
-        style D fill:#fff3e0
-        style E fill:#e3f2fd
+```mermaid
+flowchart LR
+    A[DNS Query] --> B{Record Type}
+    B --> C[A/AAAA<br/>Direct IP]
+    B --> D[CNAME<br/>Alias]
+    B --> E[SRV<br/>Service Discovery]
+    B --> F[CAA<br/>Certificate Authority]
+    B --> G[DNAME<br/>Subtree Delegation]
+    
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#e3f2fd
+```
 
 #### **Modern DNS Records**
 
