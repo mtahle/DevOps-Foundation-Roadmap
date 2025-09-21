@@ -51,7 +51,7 @@ Perfect for learning and experimentation before investing in paid solutions.
 ## Hosting Evolution Path
 
 ```mermaid
-graph TD
+flowchart TD
     A[Shared Hosting] --> B[VPS]
     B --> C[Dedicated Servers]
     C --> D[Cloud Infrastructure]

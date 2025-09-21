@@ -19,7 +19,7 @@ The SDLC provides a structured approach to developing software applications from
 ### SDLC Phases Overview
 
 ```mermaid
-graph LR
+flowchart LR
     A[Planning] --> B[Analysis]
     B --> C[Design]
     C --> D[Implementation]
@@ -75,7 +75,7 @@ graph LR
 ### DevOps Integration in SDLC
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Traditional SDLC"
         A1[Dev Team] --> B1[Test Team]
         B1 --> C1[Ops Team]
@@ -109,7 +109,7 @@ Understanding how web applications work is essential for deploying and managing 
 ### Three-Tier Architecture
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Client Tier (Frontend)"
         A[Web Browser]
         B[Mobile App]
@@ -293,7 +293,7 @@ docker build -t app:latest .
 Essential for troubleshooting web applications in production and development.
 
 ```mermaid
-graph LR
+flowchart LR
     A[Browser DevTools] --> B[Elements Inspector]
     A --> C[Console]
     A --> D[Network Tab]
@@ -364,7 +364,7 @@ curl -i https://api.example.com/health
 ### Agile Methodologies
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Scrum Framework"
         A[Product Backlog] --> B[Sprint Planning]
         B --> C[Sprint Backlog]
@@ -399,7 +399,7 @@ graph TB
 ### Kanban for DevOps
 
 ```mermaid
-graph LR
+flowchart LR
     A[Backlog] --> B[To Do]
     B --> C[In Development]
     C --> D[Code Review]
@@ -423,7 +423,7 @@ graph LR
 ### Static Sites
 
 ```mermaid
-graph LR
+flowchart LR
     A[Developer] --> B[Build Process]
     B --> C[Static Files]
     C --> D[CDN]
@@ -454,7 +454,7 @@ graph LR
 ### Dynamic Applications
 
 ```mermaid
-graph LR
+flowchart LR
     A[User Request] --> B[Load Balancer]
     B --> C[Web Server]
     C --> D[Application Server]

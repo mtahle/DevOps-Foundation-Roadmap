@@ -43,7 +43,7 @@ Continuous monitoring integrates monitoring practices throughout the software de
 ### The Three Pillars of Observability
 
 ```mermaid
-graph TB
+flowchart TB
     A[Observability] --> B[Metrics]
     A --> C[Logs]
     A --> D[Traces]
@@ -122,7 +122,7 @@ Tracks requests as they flow through distributed systems.
 ### Monitoring Stack Architecture
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Data Collection"
         A[Application] --> B[Metrics Exporter]
         A --> C[Log Agent]
@@ -401,9 +401,9 @@ monitoring:
 
 After implementing monitoring and observability:
 
-- [Advanced Alerting Strategies](alerting-advanced.md)
-- [Performance Optimization](performance-tuning.md)
-- [Incident Response](incident-management.md)
+- Advanced Alerting and Monitoring strategies
+- Performance Tuning techniques
+- Incident Management processes
 
 !!! success "DevOps Integration"
     Effective monitoring and observability enable faster incident response, better system understanding, and data-driven improvements. They are essential for maintaining reliable, high-performance systems in production.

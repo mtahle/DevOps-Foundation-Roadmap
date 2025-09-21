@@ -17,7 +17,7 @@ Understanding network protocols is essential for DevOps engineers to troubleshoo
 ### OSI Model vs TCP/IP Model
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "OSI Model (7 Layers)"
         A1[7. Application<br/>HTTP, FTP, SSH, DNS]
         A2[6. Presentation<br/>SSL/TLS, Encryption]  
@@ -75,7 +75,7 @@ sequenceDiagram
 ### IPv4 Addressing
 
 ```mermaid
-graph LR
+flowchart LR
     A[192.168.1.100/24] --> B[Network: 192.168.1.0]
     A --> C[Host: 100]
     A --> D[Subnet Mask: /24 or 255.255.255.0]
@@ -206,7 +206,7 @@ sequenceDiagram
 ### UDP (User Datagram Protocol)
 
 ```mermaid
-graph LR
+flowchart LR
     A[Client] -->|UDP Datagram| B[Server]
     B -->|UDP Response| A
     

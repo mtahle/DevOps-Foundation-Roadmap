@@ -17,7 +17,7 @@ Apache is one of the most popular web servers, powering millions of websites wor
 #### Apache Architecture
 
 ```mermaid
-graph TB
+flowchart TB
     A[HTTP Request] --> B[Apache Main Process]
     B --> C[Worker Process 1]
     B --> D[Worker Process 2]

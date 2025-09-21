@@ -19,7 +19,7 @@ Understanding CI/CD principles is essential before choosing tools and implementi
 ### CI/CD Pipeline Stages
 
 ```mermaid
-graph LR
+flowchart LR
     A[Code Commit] --> B[Build]
     B --> C[Test]
     C --> D[Security Scan]
@@ -373,8 +373,8 @@ deploy_production:
 After mastering automation fundamentals, explore:
 
 - [Continuous Monitoring](../monitoring/introduction.md)
-- [Deployment Environments](../deployment/environments.md)
-- [Advanced Container Orchestration](../containers/kubernetes-advanced.md)
+- Deployment Environments management
+- Advanced Container Orchestration
 
 !!! success "DevOps Integration"
     Automation is the cornerstone of DevOps culture, enabling faster delivery, consistent deployments, and reliable infrastructure management. Master these concepts to build robust, scalable systems.

@@ -28,7 +28,7 @@ Learn monitoring fundamentals, metrics collection, and observability principles.
 ## 📈 Learning Path
 
 ```mermaid
-graph LR
+flowchart LR
     A[Monitoring Introduction] --> B[Advanced Monitoring]
     A --> C[Alerting & Response]
     A --> D[Log Management]

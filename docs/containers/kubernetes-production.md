@@ -7,7 +7,7 @@ This guide covers advanced Kubernetes production deployment strategies, cluster 
 ### High Availability Cluster Setup
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Load Balancer Layer"
         LB[Load Balancer]
     end
@@ -1014,9 +1014,9 @@ spec:
 
 After mastering production Kubernetes deployment:
 
-- [Service Mesh Deep Dive](service-mesh.md)
-- [Multi-Cloud Kubernetes](multi-cloud-k8s.md)
-- [Kubernetes Cost Optimization](cost-optimization.md)
+- Service Mesh Deep Dive (Istio, Linkerd)
+- Multi-Cloud Kubernetes deployment
+- Kubernetes Cost Optimization strategies
 
 !!! warning "Production Checklist"
     - [ ] High availability control plane

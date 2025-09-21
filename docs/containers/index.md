@@ -36,7 +36,7 @@ Master Kubernetes deployment, management, and production-ready configurations.
 ## 📈 Learning Path
 
 ```mermaid
-graph LR
+flowchart LR
     A[Container Introduction] --> B[Container Security]
     A --> C[Kubernetes Production]
     B --> C

@@ -15,7 +15,7 @@ Nginx excels as a reverse proxy and load balancer, providing high performance an
 ### Reverse Proxy Architecture
 
 ```mermaid
-graph LR
+flowchart LR
     A[Client Requests] --> B[Nginx Reverse Proxy]
     B --> C[Backend Server 1]
     B --> D[Backend Server 2]
@@ -143,7 +143,7 @@ High availability ensures minimal downtime and maintains service continuity thro
 ### Multi-Tier HA Architecture
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Load Balancer Tier"
         LB1[Load Balancer 1]
         LB2[Load Balancer 2]
@@ -270,7 +270,7 @@ Autoscaling automatically adjusts resources based on demand, ensuring optimal pe
 #### Horizontal vs Vertical Scaling
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Horizontal Scaling (Scale Out)"
         HS1[Server 1<br/>2 CPU, 4GB RAM]
         HS2[Server 2<br/>2 CPU, 4GB RAM]
@@ -689,7 +689,7 @@ echo "- Caching: Redis/Memcached for > 200 RPS"
 
 After implementing advanced hosting solutions:
 
-- [Container Orchestration](../containers/kubernetes-advanced.md)
+- Container Orchestration with Kubernetes
 - [Infrastructure as Code](../automation/introduction.md)
 - [Advanced Monitoring](../monitoring/introduction.md)
 

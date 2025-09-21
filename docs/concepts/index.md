@@ -42,7 +42,7 @@ Explore hosting options, server management, and hosting infrastructure.
 ## 📈 Learning Path
 
 ```mermaid
-graph LR
+flowchart LR
     A[Internet Basics] --> B[Web Development]
     A --> C[Domains & DNS]
     A --> D[Internet Protocols]

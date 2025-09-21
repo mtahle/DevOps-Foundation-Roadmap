@@ -32,7 +32,7 @@ Understand container-specific CI/CD patterns, registry management, and deploymen
 ## 📈 Learning Path
 
 ```mermaid
-graph LR
+flowchart LR
     A[Automation Introduction] --> B[Container CI/CD]
 ```
 

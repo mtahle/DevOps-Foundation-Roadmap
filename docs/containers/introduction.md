@@ -7,7 +7,7 @@
 ### The Evolution: From Physical Servers to Containers
 
 ```mermaid
-graph LR
+flowchart LR
     A[Physical Servers] --> B[Virtual Machines]
     B --> C[Containers]
     
@@ -100,7 +100,7 @@ After completing this container journey, you will be able to:
 ## Where Container Skills Fit in Your DevOps Roadmap
 
 ```mermaid
-graph TD
+flowchart TD
     A[Linux Fundamentals] --> B[Containers & Docker]
     B --> C[Container Orchestration]
     C --> D[CI/CD Pipelines]
@@ -211,7 +211,7 @@ Docker is the most popular containerization platform, making it easy to package,
 ### Core Docker Concepts
 
 ```mermaid
-graph TB
+flowchart TB
     A[Docker Image] --> B[Docker Container]
     C[Dockerfile] --> A
     D[Docker Registry] --> A
@@ -660,7 +660,7 @@ Imagine you have 100 containers running your application:
 #### The Evolution from Docker to Kubernetes
 
 ```mermaid
-graph TB
+flowchart TB
     A[Single Container<br/>docker run] --> B[Multiple Containers<br/>docker-compose]
     B --> C[Multiple Servers<br/>Docker Swarm]
     C --> D[Enterprise Scale<br/>Kubernetes]
@@ -695,7 +695,7 @@ graph TB
 #### Kubernetes Architecture Explained
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Control Plane"
         API[API Server<br/>Communication Hub]
         ETCD[etcd<br/>Cluster Database]
@@ -1010,7 +1010,7 @@ Containers introduce new security considerations that traditional security appro
 **Why Image Security Matters First:**
 
 ```mermaid
-graph TD
+flowchart TD
     A[Vulnerable Base Image] --> B[Inherited by Your App]
     B --> C[Deployed to Production]
     C --> D[Multiplied Across Containers]
@@ -1732,9 +1732,9 @@ After completing this comprehensive container introduction, you now understand:
 
 #### **Medium-term Expansion (3-6 Months):**
 
-- **[Infrastructure as Code](../automation/infrastructure-as-code.md)**: Terraform and Ansible for container infrastructure
+- **Infrastructure as Code**: Terraform and Ansible for container infrastructure
 - **[Advanced Monitoring](../monitoring/introduction.md)**: Prometheus, Grafana, and observability practices
-- **[Cloud Container Services](../cloud/container-services.md)**: AWS ECS/EKS, Azure ACI/AKS, Google GKE
+- **Cloud Container Services**: AWS ECS/EKS, Azure ACI/AKS, Google GKE
 
 ### Industry Context and Future Trends
 

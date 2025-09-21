@@ -9,7 +9,7 @@ Container security requires a multi-layered approach covering images, runtime, o
 ### Security Architecture Overview
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Container Security Layers"
         A[Infrastructure Security] --> B[Host OS Security]
         B --> C[Container Runtime Security]
@@ -903,7 +903,7 @@ After mastering container security and advanced topics:
 
 - [Kubernetes Production Deployment](kubernetes-production.md)
 - [Container CI/CD Pipelines](../automation/container-cicd.md)
-- [Service Mesh Implementation](service-mesh.md)
+- Service Mesh Implementation (Istio, Linkerd)
 
 !!! warning "Security Reminders"
     - Never run containers as root in production

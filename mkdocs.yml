@@ -1,5 +1,5 @@
 site_name: DevOps Foundation Roadmap
-site_description: Complete DevOps learning roadmap - From Beginner to Expert
+site_description: Complete DevOps learning roadmap - From Beginner to Expert. Master DevOps fundamentals, CI/CD, containers, automation, and cloud technologies with practical Arabic resources and industry best practices.
 site_author: Mujahed Altahleh
 site_url: https://mtahle.github.io/DevOps-Foundation-Roadmap
 
@@ -12,7 +12,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: en
-  logo: assets/logo.png
+  logo: assets/logo.svg
   palette:
     # Palette toggle for light mode
     - scheme: default
@@ -99,6 +99,9 @@ markdown_extensions:
 plugins:
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang: 
+        - en
+        - ar
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
@@ -107,6 +110,12 @@ plugins:
       fallback_to_build_date: true
   - minify:
       minify_html: true
+      minify_css: true
+      minify_js: true
+      htmlmin_opts:
+        remove_comments: true
+        remove_empty_space: true
+      cache_safe: true
 
 # Extra CSS and JavaScript
 extra_css:
@@ -116,7 +125,7 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mtml-chtml.js
-  - https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js
   - javascripts/mermaid.js
 
 # Extra
@@ -133,13 +142,50 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/mtahle
+      name: GitHub Repository
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/mtahle
+      name: Twitter Profile
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/mtahle
+      name: LinkedIn Profile
+    - icon: fontawesome/solid/podcast
+      link: https://open.spotify.com/show/24UfF6aMe0AyUIJeckaEf7
+      name: DevOps Podcast
   status:
     new: Recently added
     deprecated: Deprecated
+  meta:
+    - name: keywords
+      content: "DevOps, Arabic DevOps, DevOps Tutorial, CI/CD, Docker, Kubernetes, Cloud, Infrastructure, Automation, DevOps Learning, Arabic Tech, مهندس DevOps"
+    - name: author
+      content: "Mujahed Al Tahleh"
+    - name: robots
+      content: "index, follow"
+    - name: googlebot
+      content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    - property: "og:type"
+      content: "website"
+    - property: "og:title"
+      content: "DevOps Foundation Roadmap - Complete Learning Guide"
+    - property: "og:description"
+      content: "Comprehensive DevOps learning roadmap from beginner to expert. Includes practical tutorials, Arabic podcast resources, and industry best practices."
+    - property: "og:image"
+      content: "https://mtahle.github.io/DevOps-Foundation-Roadmap/assets/logo-colored.svg"
+    - property: "og:url"
+      content: "https://mtahle.github.io/DevOps-Foundation-Roadmap/"
+    - property: "og:site_name"
+      content: "DevOps Foundation Roadmap"
+    - name: "twitter:card"
+      content: "summary_large_image"
+    - name: "twitter:title"
+      content: "DevOps Foundation Roadmap - Complete Learning Guide"
+    - name: "twitter:description"
+      content: "Master DevOps from basics to advanced. Practical roadmap with Arabic resources."
+    - name: "twitter:image"
+      content: "https://mtahle.github.io/DevOps-Foundation-Roadmap/assets/logo-colored.svg"
+    - name: "twitter:creator"
+      content: "@mtahle"
 
 # Navigation
 nav:

@@ -29,7 +29,7 @@ Discover DevOps podcasts for continuous learning and industry insights.
 ## 📈 Continuous Learning
 
 ```mermaid
-graph LR
+flowchart LR
     A[Technical Skills] --> B[Industry Knowledge]
     B --> C[Best Practices]
     C --> D[Community Engagement]

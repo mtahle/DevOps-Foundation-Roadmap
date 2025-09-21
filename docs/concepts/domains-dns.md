@@ -42,7 +42,7 @@ sequenceDiagram
 ### DNS Hierarchy
 
 ```mermaid
-graph TD
+flowchart TD
     A[Root Servers (.)] --> B[Top Level Domain (.com)]
     A --> C[Country Code TLD (.uk)]
     A --> D[Generic TLD (.org)]
@@ -88,7 +88,7 @@ https://blog.api.example.com:443/articles/dns-guide?page=2#section1
 ### URL Structure and Components
 
 ```mermaid
-graph LR
+flowchart LR
     A[Protocol://] --> B[Subdomain.]
     B --> C[Domain.]
     C --> D[TLD]
@@ -121,7 +121,7 @@ https://api.staging.example.com:8443/v1/users?limit=10&page=2#results
 ### Name Server Types
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "DNS Infrastructure"
         A[Root Nameservers<br/>13 globally distributed]
         B[TLD Nameservers<br/>.com, .org, .net, etc.]
@@ -170,7 +170,7 @@ graph TB
 #### **Advanced Record Types**
 
 ```mermaid
-graph LR
+flowchart LR
     A[DNS Query] --> B{Record Type}
     B --> C[A/AAAA<br/>Direct IP]
     B --> D[CNAME<br/>Alias]
@@ -207,7 +207,7 @@ example.com. ALIAS load-balancer-123456.us-west-2.elb.amazonaws.com.
 ### Environment-Based Subdomains
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Production Environment"
         A[app.example.com]
         B[api.example.com] 
@@ -350,7 +350,7 @@ done
 ### DNS Performance Monitoring
 
 ```mermaid
-graph TB
+flowchart TB
     A[DNS Query] --> B{Response Time}
     B -->|< 50ms| C[Excellent]
     B -->|50-100ms| D[Good]

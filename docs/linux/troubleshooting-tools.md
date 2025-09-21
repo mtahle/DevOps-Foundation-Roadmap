@@ -226,7 +226,7 @@ Master these troubleshooting tools, then move on to:
 
 - [Self-Managed Web Hosting](web-hosting.md)
 - [Advanced Hosting Solutions](advanced-hosting.md)
-- [Container Networking](../containers/networking.md)
+- Container Networking concepts
 
 !!! tip "Best Practices"
     - Always start with basic connectivity (ping)

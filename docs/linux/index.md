@@ -39,7 +39,7 @@ Master debugging tools, log analysis, and system troubleshooting techniques.
 ## 📈 Learning Path
 
 ```mermaid
-graph LR
+flowchart LR
     A[Linux Introduction] --> B[Web Hosting]
     B --> C[Advanced Hosting]
     A --> D[Troubleshooting Tools]

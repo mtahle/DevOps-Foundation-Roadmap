@@ -24,7 +24,7 @@ The Internet is essentially a **network of networks** - a vast, sprawling collec
 #### 1. Distributed Network Architecture
 
 ```mermaid
-graph TB
+flowchart TB
     A[Your Device] --> B[Local Router]
     B --> C[ISP Network]
     C --> D[Internet Backbone]
@@ -83,7 +83,7 @@ Protocols are standardized rules that allow different devices and software to co
 ### Essential Protocol Stack
 
 ```mermaid
-graph TD
+flowchart TD
     A[Application Layer<br/>HTTP, HTTPS, FTP, SMTP] --> B[Transport Layer<br/>TCP, UDP]
     B --> C[Internet Layer<br/>IP, ICMP]
     C --> D[Link Layer<br/>Ethernet, WiFi]
@@ -120,7 +120,7 @@ graph TD
 ### Network Hardware Components
 
 ```mermaid
-graph LR
+flowchart LR
     subgraph "Your Home/Office"
         A[Device] --> B[Switch]
         B --> C[Router]

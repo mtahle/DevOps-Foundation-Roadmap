@@ -205,7 +205,7 @@ Connect with fellow learners in the Facebook group for:
 ### Recommended Learning Path
 
 ```mermaid
-graph TD
+flowchart TD
     A[Listen to Podcast Episodes] --> B[Watch Introduction Video]
     B --> C[Follow Documentation Roadmap]
     C --> D[Join Community Discussions]

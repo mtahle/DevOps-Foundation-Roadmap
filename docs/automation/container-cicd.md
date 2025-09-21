@@ -7,7 +7,7 @@ This guide covers implementing comprehensive CI/CD pipelines specifically design
 ### Modern CI/CD Pipeline Overview
 
 ```mermaid
-graph TB
+flowchart TB
     subgraph "Source Control"
         SCM[Git Repository]
         PR[Pull Request]
@@ -1089,8 +1089,8 @@ spec:
 
 After implementing container CI/CD pipelines:
 
-- [Advanced Deployment Strategies](../automation/advanced-deployments.md)
-- [Infrastructure as Code](../automation/infrastructure-as-code.md)
+- Advanced Deployment Strategies (blue-green, canary deployments)
+- Infrastructure as Code with Terraform and Ansible
 - [Monitoring and Observability](../monitoring/introduction.md)
 
 !!! tip "CI/CD Best Practices"
