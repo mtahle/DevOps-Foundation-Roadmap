@@ -39,29 +39,27 @@ DNS (Domain Name System) is often called the "phonebook of the internet." It tra
 
 ### DNS Hierarchy
 
-```mermaid
-graph TD
-    subgraph DNS_Hierarchy
-        A[Root (.)] --> B[gTLD (.com)]
-        A --> C[ccTLD (.uk)]
-        A --> D[New gTLD (.org)]
+    graph TD
+        subgraph DNS_Hierarchy
+            A[Root (.)] --> B[gTLD (.com)]
+            A --> C[ccTLD (.uk)]
+            A --> D[New gTLD (.org)]
+            
+            B --> E[example.com]
+            E --> F[www.example.com]
+            E --> G[api.example.com]
+            E --> H[mail.example.com]
+        end
         
-        B --> E[example.com]
-        E --> F[www.example.com]
-        E --> G[api.example.com]
-        E --> H[mail.example.com]
-    end
-    
-    classDef root fill:#ff9999
-    classDef tld fill:#99ccff
-    classDef domain fill:#99ff99
-    classDef sub fill:#ffff99
-    
-    class A root
-    class B,C,D tld
-    class E domain
-    class F,G,H sub
-```
+        classDef root fill:#ff9999
+        classDef tld fill:#99ccff
+        classDef domain fill:#99ff99
+        classDef sub fill:#ffff99
+        
+        class A root
+        class B,C,D tld
+        class E domain
+        class F,G,H sub
 
 ## Domain Name Structure
 
@@ -107,9 +105,7 @@ graph TD
 
 #### **URL Components Explained**
 
-```
-https://api.staging.example.com:8443/v1/users?limit=10&page=2#results
-```
+    https://api.staging.example.com:8443/v1/users?limit=10&page=2#results
 
 - **Protocol**: `https://` - How to access the resource
 - **Subdomain**: `api.staging` - Service and environment identifiers  
@@ -174,19 +170,17 @@ https://api.staging.example.com:8443/v1/users?limit=10&page=2#results
 
 #### **Advanced Record Types**
 
-```mermaid
-flowchart LR
-    A[DNS Query] --> B{Record Type}
-    B --> C[A/AAAA<br/>Direct IP]
-    B --> D[CNAME<br/>Alias]
-    B --> E[SRV<br/>Service Discovery]
-    B --> F[CAA<br/>Certificate Authority]
-    B --> G[DNAME<br/>Subtree Delegation]
-    
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#e3f2fd
-```
+    flowchart LR
+        A[DNS Query] --> B{Record Type}
+        B --> C[A/AAAA<br/>Direct IP]
+        B --> D[CNAME<br/>Alias]
+        B --> E[SRV<br/>Service Discovery]
+        B --> F[CAA<br/>Certificate Authority]
+        B --> G[DNAME<br/>Subtree Delegation]
+        
+        style C fill:#e8f5e8
+        style D fill:#fff3e0
+        style E fill:#e3f2fd
 
 #### **Modern DNS Records**
 
@@ -279,11 +273,9 @@ flowchart LR
 
 #### **SRV Records for Microservices**
 
-```dns
-_http._tcp.auth-service.example.com. 300 IN SRV 10 5 8080 auth-1.example.com.
-_http._tcp.auth-service.example.com. 300 IN SRV 10 5 8080 auth-2.example.com.
-_grpc._tcp.user-service.example.com. 300 IN SRV 10 5 9090 user-1.example.com.
-```
+    _http._tcp.auth-service.example.com. 300 IN SRV 10 5 8080 auth-1.example.com.
+    _http._tcp.auth-service.example.com. 300 IN SRV 10 5 8080 auth-2.example.com.
+    _grpc._tcp.user-service.example.com. 300 IN SRV 10 5 9090 user-1.example.com.
 
 
 
@@ -527,17 +519,17 @@ With domain and DNS knowledge, you're ready to:
 ### **Primary Sources**
 
 1. **[RFC 1034 - Domain Names Concepts](https://tools.ietf.org/html/rfc1034)** - Original DNS specification
-1. **[RFC 1035 - Domain Names Implementation](https://tools.ietf.org/html/rfc1035)** - DNS implementation details  
-1. **[Internet Corporation for Assigned Names and Numbers (ICANN)](https://www.icann.org/)** - Domain name governance
+2. **[RFC 1035 - Domain Names Implementation](https://tools.ietf.org/html/rfc1035)** - DNS implementation details  
+3. **[Internet Corporation for Assigned Names and Numbers (ICANN)](https://www.icann.org/)** - Domain name governance
 
 ### **Security Standards**
 
 1. **[RFC 4033 - DNSSEC Introduction](https://tools.ietf.org/html/rfc4033)** - DNS security extensions
-1. **[DNS over HTTPS (DoH) - RFC 8484](https://tools.ietf.org/html/rfc8484)** - Encrypted DNS queries
-1. **[DNS Security Extensions (DNSSEC) Deployment Guide](https://www.nist.gov/publications/secure-domain-name-system-dns-deployment-guide)** - NIST implementation guide
+2. **[DNS over HTTPS (DoH) - RFC 8484](https://tools.ietf.org/html/rfc8484)** - Encrypted DNS queries
+3. **[DNS Security Extensions (DNSSEC) Deployment Guide](https://www.nist.gov/publications/secure-domain-name-system-dns-deployment-guide)** - NIST implementation guide
 
 ### **Modern DNS Technologies**
 
 1. **[Cloudflare DNS Documentation](https://developers.cloudflare.com/dns/)** - Modern DNS service features
-1. **[AWS Route 53 Best Practices](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-dns.html)** - Cloud DNS management
-1. **[Google Cloud DNS Documentation](https://cloud.google.com/dns/docs)** - Enterprise DNS solutions
+2. **[AWS Route 53 Best Practices](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-dns.html)** - Cloud DNS management
+3. **[Google Cloud DNS Documentation](https://cloud.google.com/dns/docs)** - Enterprise DNS solutions
