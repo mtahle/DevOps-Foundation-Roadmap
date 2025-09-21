@@ -2,17 +2,17 @@
 
 Welcome to the Containers & Orchestration section! This section covers containerization technologies, security, and Kubernetes orchestration for modern DevOps practices.
 
-## 🎯 Learning Objectives
+## Learning Objectives
 
 By completing this section, you will:
 
-- ✅ Master Docker containerization and container management
-- ✅ Understand container security best practices
-- ✅ Learn Kubernetes orchestration and production deployment
-- ✅ Implement container networking and storage
-- ✅ Design scalable container architectures
+- Master Docker containerization and container management
+- Understand container security best practices
+- Learn Kubernetes orchestration and production deployment
+- Implement container networking and storage
+- Design scalable container architectures
 
-## 📚 Section Contents
+## Section Contents
 
 ### [Container Introduction](introduction.md)
 
@@ -26,14 +26,14 @@ Understand container security threats, vulnerability management, and security be
 
 Master Kubernetes deployment, management, and production-ready configurations.
 
-## 🏁 Prerequisites
+## Prerequisites
 
 - Completed Linux & Systems section
 - Basic understanding of networking concepts
 - Familiarity with command line tools
 - Understanding of web applications and services
 
-## 📈 Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -42,7 +42,7 @@ flowchart LR
     B --> C
 ```
 
-## 💡 Why This Matters
+## Why This Matters
 
 Containers are essential for modern DevOps because:
 
@@ -52,4 +52,4 @@ Containers are essential for modern DevOps because:
 - **CI/CD**: Streamlined build, test, and deployment pipelines
 - **Resource Efficiency**: Better resource utilization than traditional VMs
 
-Let's containerize your DevOps skills! 🐳
+Next you will apply these concepts in automation and delivery practices.

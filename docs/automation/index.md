@@ -2,17 +2,17 @@
 
 Welcome to the Automation & CI/CD section! This section covers continuous integration, continuous delivery, and infrastructure automation essential for modern DevOps workflows.
 
-## 🎯 Learning Objectives
+## Learning Objectives
 
 By completing this section, you will:
 
-- ✅ Design and implement CI/CD pipelines
-- ✅ Automate container build and deployment workflows
-- ✅ Understand infrastructure as code principles
-- ✅ Master version control and branching strategies
-- ✅ Implement automated testing and quality gates
+- Design and implement CI/CD pipelines
+- Automate container build and deployment workflows
+- Understand infrastructure as code principles
+- Master version control and branching strategies
+- Implement automated testing and quality gates
 
-## 📚 Section Contents
+## Section Contents
 
 ### [Automation Introduction](introduction.md)
 
@@ -22,21 +22,21 @@ Learn CI/CD fundamentals, pipeline design, and automation best practices.
 
 Understand container-specific CI/CD patterns, registry management, and deployment strategies.
 
-## 🏁 Prerequisites
+## Prerequisites
 
 - Completed Containers & Orchestration section
 - Understanding of version control (Git)
 - Basic scripting knowledge
 - Familiarity with container technologies
 
-## 📈 Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
     A[Automation Introduction] --> B[Container CI/CD]
 ```
 
-## 💡 Why This Matters
+## Why This Matters
 
 Automation and CI/CD are crucial for DevOps because:
 
@@ -46,4 +46,4 @@ Automation and CI/CD are crucial for DevOps because:
 - **Collaboration**: Better developer and operations collaboration
 - **Risk Reduction**: Smaller, more frequent, less risky deployments
 
-Let's automate everything! 🤖
+You are now prepared to establish observability and reliability foundations.

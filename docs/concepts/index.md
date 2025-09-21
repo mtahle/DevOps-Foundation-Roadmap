@@ -2,23 +2,23 @@
 
 Welcome to the DevOps Fundamentals section! This section covers the essential concepts and technologies that form the foundation of modern DevOps practices.
 
-## 🎯 Learning Objectives
+## Learning Objectives
 
 By completing this section, you will:
 
-- ✅ Understand how the internet and web technologies work
-- ✅ Learn web development fundamentals and their connection to DevOps
-- ✅ Master domain names, DNS, and networking concepts
-- ✅ Understand internet protocols and their role in DevOps
-- ✅ Learn SSL/TLS security and encryption
-- ✅ Explore web hosting options and infrastructure
+- Understand how the internet and web technologies work
+- Learn web development fundamentals and their connection to DevOps
+- Master domain names, DNS, and networking concepts
+- Understand internet protocols and their role in DevOps
+- Learn SSL/TLS security and encryption
+- Explore web hosting options and infrastructure
 
-## 📚 Section Contents
+## Section Contents
 
 ### [Internet Basics](internet-basics.md)
 Learn how the internet works, including networking fundamentals, IP addresses, and routing.
 
-### [Web Development Fundamentals](web-development.md) 
+### [Web Development Fundamentals](web-development.md)
 Understand web development concepts, version control, and the software development lifecycle.
 
 ### [Domains & DNS](domains-dns.md)
@@ -33,13 +33,13 @@ Learn about encryption, certificates, and securing web communications.
 ### [Web Hosting](hosting.md)
 Explore hosting options, server management, and hosting infrastructure.
 
-## 🏁 Prerequisites
+## Prerequisites
 
 - Basic computer literacy
 - Curiosity about how web technologies work
 - No prior programming experience required
 
-## 📈 Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -52,7 +52,7 @@ flowchart LR
     E --> F
 ```
 
-## 💡 Why This Matters
+## Why This Matters
 
 Understanding these fundamentals is crucial for DevOps because:
 
@@ -62,4 +62,4 @@ Understanding these fundamentals is crucial for DevOps because:
 - **Troubleshooting**: You'll debug network and connectivity issues
 - **Automation**: You'll automate deployment and infrastructure tasks
 
-Let's start building your DevOps foundation! 🚀
+Let's start building your DevOps foundation.

@@ -64,11 +64,13 @@ flowchart TD
 
 ## Next Steps
 
-After understanding hosting fundamentals:
+After understanding hosting fundamentals you are ready to move from conceptual/web hosting into operating real systems:
 
-- [Internet Protocols](protocols.md) - Learn how data travels between servers
-- [SSL Certificates](ssl.md) - Secure your hosted applications
-- [Domain Names & DNS](domains-dns.md) - Understand domain management
+- Proceed to the Linux & Systems track: [Linux Introduction](../linux/introduction.md) – learn shell, processes, services
+- Then explore: [Web Hosting (Linux Focus)](../linux/web-hosting.md) – apply hosting concepts on Linux servers
+- Start thinking about automation foundations before scale: [Automation Introduction](../automation/introduction.md) (optional preview)
+
+If you need to revisit security fundamentals later, the earlier pages on protocols, SSL/TLS, and DNS remain reference material.
 
 !!! info "DevOps Relevance"
-    Hosting knowledge is essential for infrastructure planning, capacity management, and understanding application deployment requirements.
+  Hosting knowledge is essential for infrastructure planning, capacity management, and understanding application deployment requirements.

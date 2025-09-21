@@ -2,30 +2,30 @@
 
 Welcome to the Monitoring & Observability section! This section covers monitoring systems, alerting, logging, and observability practices for DevOps environments.
 
-## 🎯 Learning Objectives
+## Learning Objectives
 
 By completing this section, you will:
 
-- ✅ Design comprehensive monitoring strategies
-- ✅ Implement alerting and incident response workflows
-- ✅ Master log aggregation and analysis
-- ✅ Understand distributed tracing and observability
-- ✅ Create effective dashboards and metrics
+- Design comprehensive monitoring strategies
+- Implement alerting and incident response workflows
+- Master log aggregation and analysis
+- Understand distributed tracing and observability
+- Create effective dashboards and metrics
 
-## 📚 Section Contents
+## Section Contents
 
 ### [Monitoring Introduction](introduction.md)
 
 Learn monitoring fundamentals, metrics collection, and observability principles.
 
-## 🏁 Prerequisites
+## Prerequisites
 
 - Completed Automation & CI/CD section
 - Understanding of system administration
 - Familiarity with containerized applications
 - Basic knowledge of networking and protocols
 
-## 📈 Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -37,7 +37,7 @@ flowchart LR
     D --> E
 ```
 
-## 💡 Why This Matters
+## Why This Matters
 
 Monitoring and observability are essential for DevOps because:
 
@@ -47,4 +47,4 @@ Monitoring and observability are essential for DevOps because:
 - **Business Intelligence**: Understand user behavior and system usage
 - **Continuous Improvement**: Data-driven decisions for system optimization
 
-Let's make your systems observable! 📊
+With observability in place you can advance to resilience, governance, and platform concerns.

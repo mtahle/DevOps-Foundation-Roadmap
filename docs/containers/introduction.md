@@ -74,7 +74,7 @@ $ python app.py
 
 After completing this container journey, you will be able to:
 
-### 🎯 **Technical Skills**
+### Technical Skills
 
 - **Package any application** into a portable container
 - **Deploy applications consistently** across different environments
@@ -83,7 +83,7 @@ After completing this container journey, you will be able to:
 - **Monitor and troubleshoot** containerized applications
 - **Design scalable architectures** using container orchestration
 
-### 🚀 **Career Impact**
+### Career Impact
 
 - **DevOps Engineer**: Containers are fundamental to modern DevOps practices
 - **Cloud Engineer**: Essential for AWS, Azure, GCP deployments
@@ -91,7 +91,7 @@ After completing this container journey, you will be able to:
 - **Software Architect**: Key skill for microservices architecture
 - **Startup Technical Lead**: Rapid deployment and scaling capabilities
 
-### 📈 **Industry Relevance**
+### Industry Relevance
 
 - **95% of organizations** use containers in production (CNCF Survey 2024)
 - **Average salary increase**: 15-25% for container-skilled engineers

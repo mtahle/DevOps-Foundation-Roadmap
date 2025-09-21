@@ -2,17 +2,17 @@
 
 Welcome to the Linux & Systems section! This section covers Linux fundamentals, system administration, and hosting technologies essential for DevOps professionals.
 
-## 🎯 Learning Objectives
+## Learning Objectives
 
 By completing this section, you will:
 
-- ✅ Master Linux command line and system administration
-- ✅ Understand web server configuration and management
-- ✅ Learn advanced hosting and infrastructure concepts
-- ✅ Develop troubleshooting and debugging skills
-- ✅ Understand system performance and monitoring
+- Master Linux command line and system administration
+- Understand web server configuration and management
+- Learn advanced hosting and infrastructure concepts
+- Develop troubleshooting and debugging skills
+- Understand system performance and monitoring
 
-## 📚 Section Contents
+## Section Contents
 
 ### [Linux Introduction](introduction.md)
 
@@ -30,13 +30,13 @@ Explore advanced hosting concepts, load balancing, and scaling strategies.
 
 Master debugging tools, log analysis, and system troubleshooting techniques.
 
-## 🏁 Prerequisites
+## Prerequisites
 
 - Basic computer literacy
 - Completed Fundamentals section
 - Access to a Linux environment (VM, container, or cloud instance)
 
-## 📈 Learning Path
+## Learning Path
 
 ```mermaid
 flowchart LR
@@ -46,7 +46,7 @@ flowchart LR
     C --> D
 ```
 
-## 💡 Why This Matters
+## Why This Matters
 
 Linux skills are essential for DevOps because:
 
@@ -56,4 +56,4 @@ Linux skills are essential for DevOps because:
 - **CI/CD**: Build agents and deployment targets are typically Linux
 - **Monitoring**: System monitoring and log analysis on Linux systems
 
-Ready to become a Linux expert! 🐧
+Proceed when you are comfortable with these Linux fundamentals.

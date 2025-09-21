@@ -2,7 +2,7 @@
 
 Welcome to the DevOps on the Go podcast community! This Arabic podcast provides practical DevOps insights, tutorials, and industry discussions for Arabic-speaking professionals.
 
-## 🎙️ Podcast Information
+## Podcast Information
 
 **DevOps on the Go** is an Arabic podcast focused on DevOps engineering, cloud technologies, and modern software development practices. The podcast aims to make DevOps concepts accessible to Arabic speakers and build a strong regional DevOps community.
 
@@ -26,7 +26,7 @@ Welcome to the DevOps on the Go podcast community! This Arabic podcast provides 
   
   Access the podcast on Spreaker and various other podcast platforms.
 
-## 🌐 Community & Social Media
+## Community & Social Media
 
 ### Connect with the Community
 
@@ -38,7 +38,7 @@ Welcome to the DevOps on the Go podcast community! This Arabic podcast provides 
 
 ## 🎧 All Podcast Episodes
 
-### 📊 Episodes Summary
+### Episodes Summary
 
 !!! info "Podcast Statistics"
     - **Total Episodes**: 10+ episodes across 3 seasons
@@ -49,7 +49,7 @@ Welcome to the DevOps on the Go podcast community! This Arabic podcast provides 
 !!! tip "Quick Navigation"
     - **[Season 3 (2024)](#season-3-2024)**: Management, Monitoring, Latest trends
     - **[Season 2 (2024-2025)](#season-2-2024-2025)**: Advanced topics, SRE, DevSecOps, AI
-    - **[Season 1 (2021-2022)](#season-1-original-series-2021-2022)**: Fundamentals and foundations
+    - **[Season 1 (2021-2022)](#season-1-original-series)**: Fundamentals and foundations
 
 ### Season 3 (2024)
 
@@ -134,7 +134,7 @@ Welcome to the DevOps on the Go podcast community! This Arabic podcast provides 
 
 **[🎙️ Listen on Spotify](https://open.spotify.com/episode/0cKWp6qKUaWOkm6VvGg1bM)**
 
-## 📚 Featured Learning Path: Episode 5
+## Featured Learning Path: Episode 5
 
 This documentation roadmap is based on **Episode 5** of DevOps on the Go, which provides a comprehensive guide for beginners entering the DevOps field.
 
@@ -148,7 +148,7 @@ This documentation roadmap is based on **Episode 5** of DevOps on the Go, which 
 
 **Listen to Episode 5**: [DevOps Roadmap Episode](https://anchor.fm/devops-on-the-go/episodes/05-------e1v1eh6)
 
-## 🎯 What You'll Learn
+## What You'll Learn
 
 ### Core Topics Covered
 
@@ -168,7 +168,7 @@ This documentation roadmap is based on **Episode 5** of DevOps on the Go, which 
 - **Students**: Learning cloud and automation technologies
 - **Professionals**: Seeking Arabic content in DevOps
 
-## 🚀 Getting Started
+## Getting Started
 
 If you're new to DevOps, start with these resources:
 
@@ -177,6 +177,7 @@ If you're new to DevOps, start with these resources:
 **[01 Introduction To DevOps | مقدمة للـ DevOps - By Mujahed Al Tahleh | Arabic](https://www.youtube.com/watch?v=451Ltd2bx28)**
 
 This comprehensive introduction video covers:
+
 - What is DevOps and why it matters
 - DevOps culture and practices
 - Career opportunities in DevOps
@@ -185,6 +186,7 @@ This comprehensive introduction video covers:
 ### 2. Follow the Documentation Roadmap
 
 Use this documentation as your learning guide:
+
 1. [Internet and Web Fundamentals](../concepts/internet-basics.md)
 2. [Linux Server Management](../linux/introduction.md)
 3. [Containerization with Docker](../containers/introduction.md)
@@ -194,13 +196,14 @@ Use this documentation as your learning guide:
 ### 3. Join the Community
 
 Connect with fellow learners in the Facebook group for:
+
 - Q&A sessions
 - Resource sharing
 - Project collaboration
 - Career advice
 - Industry discussions
 
-## 📖 Additional Learning Resources
+## Additional Learning Resources
 
 ### Recommended Learning Path
 
@@ -221,7 +224,7 @@ flowchart TD
 - **Open Source Projects**: Contribute to DevOps tools and projects
 - **Local Meetups**: Attend DevOps meetups in your area
 
-## 🤝 Contributing to the Community
+## Contributing to the Community
 
 ### Ways to Get Involved
 
@@ -234,13 +237,14 @@ flowchart TD
 ### Content Suggestions
 
 Help shape future content by suggesting:
+
 - Tool tutorials and comparisons
 - Real-world case studies
 - Career guidance and tips
 - Technical deep-dives
 - Industry trend discussions
 
-## 📞 Contact Information
+## Contact Information
 
 For podcast suggestions, collaboration opportunities, or technical questions:
 
@@ -249,7 +253,7 @@ For podcast suggestions, collaboration opportunities, or technical questions:
 - **Community**: [Facebook Group](https://bit.ly/devops-geeks)
 - **Social Media**: [Instagram](https://bit.ly/devops-insta)
 
-## 🎉 Thank You!
+## Thank You
 
 Thank you for being part of the DevOps on the Go community. Your engagement and enthusiasm drive us to create better content and build a stronger Arabic-speaking DevOps community.
 

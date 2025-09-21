@@ -190,18 +190,25 @@ extra:
 # Navigation
 nav:
   - Home: index.md
-  - Fundamentals:
+  - Foundations:
+    - introduction/index.md
+    - History & Evolution: introduction/history.md
+    - What DevOps Means: introduction/meaning.md
+    - CALMS Framework: introduction/calms.md
+    - Core Practices & Principles: introduction/practices.md
+    - Culture & Collaboration: introduction/culture.md
+  - Network & Web Fundamentals:
     - concepts/index.md
     - Internet Basics: concepts/internet-basics.md
-    - Web Development: concepts/web-development.md
+    - Web Development Basics: concepts/web-development.md
     - Domains & DNS: concepts/domains-dns.md
     - Internet Protocols: concepts/protocols.md
     - SSL/TLS: concepts/ssl.md
-    - Web Hosting: concepts/hosting.md
+    - Web Hosting Concepts: concepts/hosting.md
   - Linux & Systems:
     - linux/index.md
     - Linux Introduction: linux/introduction.md
-    - Web Hosting: linux/web-hosting.md
+    - Web Hosting (Linux Focus): linux/web-hosting.md
     - Advanced Hosting: linux/advanced-hosting.md
     - Troubleshooting Tools: linux/troubleshooting-tools.md
   - Containers & Orchestration:
@@ -216,6 +223,8 @@ nav:
   - Monitoring & Observability:
     - monitoring/index.md
     - Monitoring Introduction: monitoring/introduction.md
+  - Advanced & Emerging:
+    - advanced/index.md
   - Resources & References:
     - resources/index.md
     - Podcasts: resources/podcast.md
