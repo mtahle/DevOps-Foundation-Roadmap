@@ -19,22 +19,22 @@ The SDLC provides a structured approach to developing software applications from
 ### SDLC Phases Overview
 
 ```mermaid
-flowchart LR
-    A[Planning] --> B[Analysis]
-    B --> C[Design]
-    C --> D[Implementation]
-    D --> E[Testing]
-    E --> F[Deployment]
-    F --> G[Maintenance]
-    G --> A
-    
-    style A fill:#e3f2fd
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#ffebee
-    style F fill:#f1f8e9
-    style G fill:#fce4ec
+    flowchart LR
+        A[Planning] --> B[Analysis]
+        B --> C[Design]
+        C --> D[Implementation]
+        D --> E[Testing]
+        E --> F[Deployment]
+        F --> G[Maintenance]
+        G --> A
+        
+        style A fill:#e3f2fd
+        style B fill:#f3e5f5
+        style C fill:#e8f5e8
+        style D fill:#fff3e0
+        style E fill:#ffebee
+        style F fill:#f1f8e9
+        style G fill:#fce4ec
 ```
 
 #### **1. Planning Phase**
@@ -75,31 +75,31 @@ flowchart LR
 ### DevOps Integration in SDLC
 
 ```mermaid
-flowchart TB
-    subgraph "Traditional SDLC"
-        A1[Dev Team] --> B1[Test Team]
-        B1 --> C1[Ops Team]
-    end
-    
-    subgraph "DevOps SDLC"
-        A2[Plan] --> B2[Code]
-        B2 --> C2[Build]
-        C2 --> D2[Test]
-        D2 --> E2[Release]
-        E2 --> F2[Deploy]
-        F2 --> G2[Operate]
-        G2 --> H2[Monitor]
-        H2 --> A2
-    end
-    
-    style A2 fill:#e3f2fd
-    style B2 fill:#f3e5f5
-    style C2 fill:#e8f5e8
-    style D2 fill:#fff3e0
-    style E2 fill:#ffebee
-    style F2 fill:#f1f8e9
-    style G2 fill:#fce4ec
-    style H2 fill:#e0f2f1
+    flowchart TB
+        subgraph "Traditional SDLC"
+            A1[Dev Team] --> B1[Test Team]
+            B1 --> C1[Ops Team]
+        end
+        
+        subgraph "DevOps SDLC"
+            A2[Plan] --> B2[Code]
+            B2 --> C2[Build]
+            C2 --> D2[Test]
+            D2 --> E2[Release]
+            E2 --> F2[Deploy]
+            F2 --> G2[Operate]
+            G2 --> H2[Monitor]
+            H2 --> A2
+        end
+        
+        style A2 fill:#e3f2fd
+        style B2 fill:#f3e5f5
+        style C2 fill:#e8f5e8
+        style D2 fill:#fff3e0
+        style E2 fill:#ffebee
+        style F2 fill:#f1f8e9
+        style G2 fill:#fce4ec
+        style H2 fill:#e0f2f1
 ```
 
 ## Web Application Architecture
@@ -109,36 +109,36 @@ Understanding how web applications work is essential for deploying and managing 
 ### Three-Tier Architecture
 
 ```mermaid
-flowchart TB
-    subgraph "Client Tier (Frontend)"
-        A[Web Browser]
-        B[Mobile App]
-        C[Desktop App]
-    end
-    
-    subgraph "Application Tier (Backend)"
-        D[Web Server]
-        E[Application Server]
-        F[API Gateway]
-    end
-    
-    subgraph "Data Tier"
-        G[Database]
-        H[Cache]
-        I[File Storage]
-    end
-    
-    A --> D
-    B --> F
-    C --> E
-    
-    D --> G
-    E --> H
-    F --> I
-    
-    style A fill:#e3f2fd
-    style D fill:#f3e5f5
-    style G fill:#e8f5e8
+    flowchart TB
+        subgraph "Client Tier (Frontend)"
+            A[Web Browser]
+            B[Mobile App]
+            C[Desktop App]
+        end
+        
+        subgraph "Application Tier (Backend)"
+            D[Web Server]
+            E[Application Server]
+            F[API Gateway]
+        end
+        
+        subgraph "Data Tier"
+            G[Database]
+            H[Cache]
+            I[File Storage]
+        end
+        
+        A --> D
+        B --> F
+        C --> E
+        
+        D --> G
+        E --> H
+        F --> I
+        
+        style A fill:#e3f2fd
+        style D fill:#f3e5f5
+        style G fill:#e8f5e8
 ```
 
 ### Frontend Technologies
@@ -177,18 +177,18 @@ flowchart TB
 #### RESTful APIs
 
 ```mermaid
-sequenceDiagram
-    participant C as Client
-    participant A as API Gateway
-    participant S as Service
-    participant D as Database
-    
-    C->>A: HTTP Request
-    A->>S: Forward Request
-    S->>D: Query Data
-    D-->>S: Return Data
-    S-->>A: JSON Response
-    A-->>C: HTTP Response
+    sequenceDiagram
+        participant C as Client
+        participant A as API Gateway
+        participant S as Service
+        participant D as Database
+        
+        C->>A: HTTP Request
+        A->>S: Forward Request
+        S->>D: Query Data
+        D-->>S: Return Data
+        S-->>A: JSON Response
+        A-->>C: HTTP Response
 ```
 
 **REST Principles:**
@@ -209,19 +209,19 @@ Version control is fundamental to modern software development and DevOps practic
 ### Git Workflow
 
 ```mermaid
-gitgraph
-    commit id: "Initial"
-    branch develop
-    commit id: "Feature A"
-    branch feature/login
-    commit id: "Add auth"
-    commit id: "Fix bugs"
-    checkout develop
-    merge feature/login
-    commit id: "Integration"
-    checkout main
-    merge develop
-    commit id: "Release v1.0"
+    gitGraph
+        commit id: "Initial"
+        branch develop
+        commit id: "Feature A"
+        branch feature/login
+        commit id: "Add auth"
+        commit id: "Fix bugs"
+        checkout develop
+        merge feature/login
+        commit id: "Integration"
+        checkout main
+        merge develop
+        commit id: "Release v1.0"
 ```
 
 ### Essential Git Commands for DevOps
@@ -293,20 +293,20 @@ docker build -t app:latest .
 Essential for troubleshooting web applications in production and development.
 
 ```mermaid
-flowchart LR
-    A[Browser DevTools] --> B[Elements Inspector]
-    A --> C[Console]
-    A --> D[Network Tab]
-    A --> E[Performance]
-    A --> F[Security]
-    A --> G[Application]
-    
-    B --> B1[HTML/CSS Debugging]
-    C --> C1[JavaScript Errors]
-    D --> D1[API Calls/Responses]
-    E --> E1[Performance Analysis]
-    F --> F1[SSL/Security Issues]
-    G --> G1[Storage/Cache]
+    flowchart LR
+        A[Browser DevTools] --> B[Elements Inspector]
+        A --> C[Console]
+        A --> D[Network Tab]
+        A --> E[Performance]
+        A --> F[Security]
+        A --> G[Application]
+        
+        B --> B1[HTML/CSS Debugging]
+        C --> C1[JavaScript Errors]
+        D --> D1[API Calls/Responses]
+        E --> E1[Performance Analysis]
+        F --> F1[SSL/Security Issues]
+        G --> G1[Storage/Cache]
 ```
 
 #### **Network Tab Analysis**
@@ -364,25 +364,25 @@ curl -i https://api.example.com/health
 ### Agile Methodologies
 
 ```mermaid
-flowchart TB
-    subgraph "Scrum Framework"
-        A[Product Backlog] --> B[Sprint Planning]
-        B --> C[Sprint Backlog]
-        C --> D[Daily Scrum]
-        D --> E[Sprint Review]
-        E --> F[Sprint Retrospective]
-        F --> B
-    end
-    
-    subgraph "DevOps Integration"
-        G[Continuous Integration]
-        H[Continuous Delivery]
-        I[Continuous Monitoring]
-    end
-    
-    C --> G
-    E --> H
-    F --> I
+    flowchart TB
+        subgraph "Scrum Framework"
+            A[Product Backlog] --> B[Sprint Planning]
+            B --> C[Sprint Backlog]
+            C --> D[Daily Scrum]
+            D --> E[Sprint Review]
+            E --> F[Sprint Retrospective]
+            F --> B
+        end
+        
+        subgraph "DevOps Integration"
+            G[Continuous Integration]
+            H[Continuous Delivery]
+            I[Continuous Monitoring]
+        end
+        
+        C --> G
+        E --> H
+        F --> I
 ```
 
 #### **Scrum Events and DevOps**
@@ -399,18 +399,18 @@ flowchart TB
 ### Kanban for DevOps
 
 ```mermaid
-flowchart LR
-    A[Backlog] --> B[To Do]
-    B --> C[In Development]
-    C --> D[Code Review]
-    D --> E[Testing]
-    E --> F[Staging]
-    F --> G[Production]
-    G --> H[Monitoring]
-    
-    style A fill:#f9f9f9
-    style G fill:#e8f5e8
-    style H fill:#e3f2fd
+    flowchart LR
+        A[Backlog] --> B[To Do]
+        B --> C[In Development]
+        C --> D[Code Review]
+        D --> E[Testing]
+        E --> F[Staging]
+        F --> G[Production]
+        G --> H[Monitoring]
+        
+        style A fill:#f9f9f9
+        style G fill:#e8f5e8
+        style H fill:#e3f2fd
 ```
 
 **Work-in-Progress (WIP) Limits:**
@@ -423,14 +423,14 @@ flowchart LR
 ### Static Sites
 
 ```mermaid
-flowchart LR
-    A[Developer] --> B[Build Process]
-    B --> C[Static Files]
-    C --> D[CDN]
-    D --> E[User Browser]
-    
-    style C fill:#e8f5e8
-    style D fill:#e3f2fd
+    flowchart LR
+        A[Developer] --> B[Build Process]
+        B --> C[Static Files]
+        C --> D[CDN]
+        D --> E[User Browser]
+        
+        style C fill:#e8f5e8
+        style D fill:#e3f2fd
 ```
 
 **Characteristics:**
@@ -454,19 +454,19 @@ flowchart LR
 ### Dynamic Applications
 
 ```mermaid
-flowchart LR
-    A[User Request] --> B[Load Balancer]
-    B --> C[Web Server]
-    C --> D[Application Server]
-    D --> E[Database]
-    E --> D
-    D --> C
-    C --> B
-    B --> A
-    
-    style B fill:#fff3e0
-    style D fill:#e8f5e8
-    style E fill:#e3f2fd
+    flowchart LR
+        A[User Request] --> B[Load Balancer]
+        B --> C[Web Server]
+        C --> D[Application Server]
+        D --> E[Database]
+        E --> D
+        D --> C
+        C --> B
+        B --> A
+        
+        style B fill:#fff3e0
+        style D fill:#e8f5e8
+        style E fill:#e3f2fd
 ```
 
 **Characteristics:**
@@ -487,20 +487,20 @@ flowchart LR
 
 #### **Critical Rendering Path**
 ```mermaid
-sequenceDiagram
-    participant B as Browser
-    participant S as Server
-    
-    B->>S: Request HTML
-    S-->>B: HTML Response
-    Note over B: Parse HTML
-    B->>S: Request CSS
-    B->>S: Request JS
-    S-->>B: CSS Response
-    S-->>B: JS Response
-    Note over B: Build DOM + CSSOM
-    Note over B: Render Tree
-    Note over B: Layout & Paint
+    sequenceDiagram
+        participant B as Browser
+        participant S as Server
+        
+        B->>S: Request HTML
+        S-->>B: HTML Response
+        Note over B: Parse HTML
+        B->>S: Request CSS
+        B->>S: Request JS
+        S-->>B: CSS Response
+        S-->>B: JS Response
+        Note over B: Build DOM + CSSOM
+        Note over B: Render Tree
+        Note over B: Layout & Paint
 ```
 
 #### **Optimization Techniques**
