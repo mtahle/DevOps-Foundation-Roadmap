@@ -18,55 +18,52 @@ DNS (Domain Name System) is often called the "phonebook of the internet." It tra
 
 ### DNS Resolution Process
 
-  ```mermaid
-
-sequenceDiagram
-    participant U as Browser
-    participant R as DNS Resolver
-    participant Root as Root DNS
-    participant TLD as TLD Server
-    participant Auth as Auth Server
-    participant Web as Web Server
-
-    U->>+R: Query: example.com
-    R->>+Root: Query .com servers
-    Root-->>-R: TLD server list
-    R->>+TLD: Query example.com
-    TLD-->>-R: Auth nameservers
-    R->>+Auth: Query IP
-    Auth-->>-R: IP: 192.0.2.1
-    R-->>-U: Return IP
-    U->>+Web: HTTP Request
-    Web-->>-U: Response
+```mermaid
+    sequenceDiagram
+        participant U as Browser
+        participant R as DNS Resolver
+        participant Root as Root DNS
+        participant TLD as TLD Server
+        participant Auth as Auth Server
+        participant Web as Web Server
+    
+        U->>+R: Query: example.com
+        R->>+Root: Query .com servers
+        Root-->>-R: TLD server list
+        R->>+TLD: Query example.com
+        TLD-->>-R: Auth nameservers
+        R->>+Auth: Query IP
+        Auth-->>-R: IP: 192.0.2.1
+        R-->>-U: Return IP
+        U->>+Web: HTTP Request
+        Web-->>-U: Response
 
 ```
 
 ### DNS Hierarchy
 
 ```mermaid
-
-graph TD
-    subgraph "DNS Hierarchy"
-        A["Root (.)"] --> B["gTLD (.com)"]
-        A --> C["ccTLD (.uk)"]
-        A --> D["New gTLD (.org)"]
-
-        B --> E["example.com"]
-        E --> F["www.example.com"]
-        E --> G["api.example.com"]
-        E --> H["mail.example.com"]
-    end
-
-    classDef root fill:#ff9999
-    classDef tld fill:#99ccff
-    classDef domain fill:#99ff99
-    classDef sub fill:#ffff99
-
-    class A root
-    class B,C,D tld
-    class E domain
-    class F,G,H sub
-
+    graph TD
+        subgraph "DNS Hierarchy"
+            A["Root (.)"] --> B["gTLD (.com)"]
+            A --> C["ccTLD (.uk)"]
+            A --> D["New gTLD (.org)"]
+    
+            B --> E["example.com"]
+            E --> F["www.example.com"]
+            E --> G["api.example.com"]
+            E --> H["mail.example.com"]
+        end
+    
+        classDef root fill:#ff9999
+        classDef tld fill:#99ccff
+        classDef domain fill:#99ff99
+        classDef sub fill:#ffff99
+    
+        class A root
+        class B,C,D tld
+        class E domain
+        class F,G,H sub
 ```
 
 ## Domain Name Structure
@@ -98,7 +95,6 @@ graph TD
 
 ### URL Structure and Components
 ```mermaid
-
   flowchart LR
     A["Protocol://"] --> B["Subdomain."]
     B --> C["Domain."]
@@ -111,7 +107,6 @@ graph TD
     style A fill:#e3f2fd
     style C fill:#e8f5e8
     style F fill:#fff3e0
-
 ```
 #### **URL Components Explained**
 
