@@ -12,17 +12,18 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: en
+  logo: assets/logo.png
   palette:
     # Palette toggle for light mode
     - scheme: default
-      primary: blue
+      primary: cyan
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
-      primary: blue
+      primary: cyan
       accent: indigo
       toggle:
         icon: material/brightness-4
@@ -49,8 +50,6 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/favicon.png
-  icon:
-    logo: logo
 
 # Extensions
 markdown_extensions:

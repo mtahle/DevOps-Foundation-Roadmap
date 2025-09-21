@@ -5,12 +5,24 @@
   direction: ltr;
 }
 
-/* Custom color scheme for DevOps theme */
+/* Custom DevOps brand color scheme - extracted from actual logo */
 :root {
-  --md-primary-fg-color: #1565c0;
-  --md-primary-fg-color--light: #42a5f5;
-  --md-primary-fg-color--dark: #0d47a1;
-  --md-accent-fg-color: #3f51b5;
+  /* Primary colors - Teal from logo (now primary as requested) */
+  --md-primary-fg-color: #4ECDC4;        /* Main teal from logo */
+  --md-primary-fg-color--light: #80E4DD;  /* Lighter teal variant */
+  --md-primary-fg-color--dark: #26A69A;   /* Darker teal variant */
+  
+  /* Accent colors - Navy Blue from logo */
+  --md-accent-fg-color: #2E3A87;          /* Main navy from logo */
+  --md-accent-fg-color--transparent: rgba(46, 58, 135, 0.1);
+  
+  /* Additional brand colors from actual logo */
+  --devops-teal: #4ECDC4;        /* Primary teal from logo */
+  --devops-navy: #2E3A87;        /* Navy blue from logo */
+  --devops-teal-light: #80E4DD;  /* Light teal */
+  --devops-teal-dark: #26A69A;   /* Dark teal */
+  --devops-navy-light: #5C6BC0;  /* Light navy */
+  --devops-navy-dark: #1A237E;   /* Dark navy */
 }
 
 /* Code block enhancements */
@@ -21,18 +33,39 @@
   font-family: 'Roboto Mono', 'Courier New', monospace;
 }
 
+/* Logo styling */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2rem;
+  width: auto;
+  filter: drop-shadow(0 0 0.2rem rgba(0,0,0,0.1));
+}
+
 /* Custom admonition styles for DevOps content */
 .md-typeset .admonition.devops {
-  border-left: .2rem solid #00bcd4;
+  border-left: .2rem solid var(--devops-teal);
 }
 
 .md-typeset .admonition.devops > .admonition-title {
-  background-color: rgba(0, 188, 212, .1);
+  background-color: var(--md-accent-fg-color--transparent);
 }
 
 .md-typeset .admonition.devops > .admonition-title::before {
-  background-color: #00bcd4;
+  background-color: var(--devops-teal);
   mask-image: var(--md-admonition-icon--tip);
+}
+
+/* DevOps-specific styling enhancements */
+.md-typeset .admonition.pipeline {
+  border-left: .2rem solid var(--devops-navy);
+}
+
+.md-typeset .admonition.pipeline > .admonition-title {
+  background-color: rgba(57, 73, 171, 0.1);
+}
+
+.md-typeset .admonition.automation {
+  border-left: .2rem solid var(--devops-teal-dark);
 }
 
 /* Navigation enhancements */

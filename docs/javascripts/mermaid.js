@@ -6,12 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
             startOnLoad: false,
             theme: 'default',
             themeVariables: {
-                primaryColor: '#2196F3',
+                primaryColor: '#4ECDC4',        // DevOps Teal (primary)
                 primaryTextColor: '#fff',
-                primaryBorderColor: '#1976D2',
-                lineColor: '#757575',
-                secondaryColor: '#E3F2FD',
-                tertiaryColor: '#f5f5f5'
+                primaryBorderColor: '#26A69A',   // DevOps Teal Dark
+                lineColor: '#2E3A87',           // DevOps Navy
+                secondaryColor: '#E0F2F1',      // Light Teal background
+                tertiaryColor: '#E8EAF6',       // Light Navy background
+                background: '#ffffff',
+                mainBkg: '#4ECDC4',
+                secondBkg: '#2E3A87',
+                tertiaryBkg: '#80E4DD'
             },
             flowchart: {
                 useMaxWidth: true,
@@ -103,19 +107,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     mermaid.initialize({
                         theme: isDark ? 'dark' : 'default',
                         themeVariables: isDark ? {
-                            primaryColor: '#BB86FC',
+                            primaryColor: '#80E4DD',        // DevOps Teal Light for dark theme
                             primaryTextColor: '#000',
-                            primaryBorderColor: '#3700B3',
-                            lineColor: '#CF6679',
-                            secondaryColor: '#03DAC6',
-                            tertiaryColor: '#121212'
+                            primaryBorderColor: '#4ECDC4',   // DevOps Teal
+                            lineColor: '#5C6BC0',           // DevOps Navy Light
+                            secondaryColor: '#2E3A87',      // DevOps Navy
+                            tertiaryColor: '#121212',
+                            background: '#121212',
+                            mainBkg: '#80E4DD',
+                            secondBkg: '#5C6BC0'
                         } : {
-                            primaryColor: '#2196F3',
+                            primaryColor: '#4ECDC4',        // DevOps Teal (primary)
                             primaryTextColor: '#fff',
-                            primaryBorderColor: '#1976D2',
-                            lineColor: '#757575',
-                            secondaryColor: '#E3F2FD',
-                            tertiaryColor: '#f5f5f5'
+                            primaryBorderColor: '#26A69A',   // DevOps Teal Dark
+                            lineColor: '#2E3A87',           // DevOps Navy
+                            secondaryColor: '#E0F2F1',      // Light Teal background
+                            tertiaryColor: '#E8EAF6',       // Light Navy background
+                            background: '#ffffff',
+                            mainBkg: '#4ECDC4',
+                            secondBkg: '#2E3A87'
                         }
                     });
                     
