@@ -19,6 +19,7 @@ DNS (Domain Name System) is often called the "phonebook of the internet." It tra
 ### DNS Resolution Process
 
   ```mermaid
+
 sequenceDiagram
     participant U as Browser
     participant R as DNS Resolver
@@ -37,11 +38,13 @@ sequenceDiagram
     R-->>-U: Return IP
     U->>+Web: HTTP Request
     Web-->>-U: Response
+
 ```
 
 ### DNS Hierarchy
 
 ```mermaid
+
 graph TD
     subgraph "DNS Hierarchy"
         A["Root (.)"] --> B["gTLD (.com)"]
@@ -63,6 +66,7 @@ graph TD
     class B,C,D tld
     class E domain
     class F,G,H sub
+
 ```
 
 ## Domain Name Structure
@@ -94,6 +98,7 @@ graph TD
 
 ### URL Structure and Components
 ```mermaid
+
   flowchart LR
     A["Protocol://"] --> B["Subdomain."]
     B --> C["Domain."]
@@ -106,6 +111,7 @@ graph TD
     style A fill:#e3f2fd
     style C fill:#e8f5e8
     style F fill:#fff3e0
+
 ```
 #### **URL Components Explained**
 
