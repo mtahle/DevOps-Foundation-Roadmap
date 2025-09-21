@@ -49,7 +49,7 @@ Welcome to the DevOps on the Go podcast community! This Arabic podcast provides 
 !!! tip "Quick Navigation"
     - **[Season 3 (2024)](#season-3-2024)**: Management, Monitoring, Latest trends
     - **[Season 2 (2024-2025)](#season-2-2024-2025)**: Advanced topics, SRE, DevSecOps, AI
-    - **[Season 1 (2021-2022)](#season-1-original-series)**: Fundamentals and foundations
+    - **[Season 1 (2021-2022)](#season-1-original-series-2021-2022)**: Fundamentals and foundations
 
 ### Season 3 (2024)
 

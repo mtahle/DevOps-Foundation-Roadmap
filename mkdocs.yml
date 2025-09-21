@@ -191,12 +191,15 @@ extra:
 nav:
   - Home: index.md
   - Foundations:
-    - introduction/index.md
-    - History & Evolution: introduction/history.md
-    - What DevOps Means: introduction/meaning.md
-    - CALMS Framework: introduction/calms.md
-    - Core Practices & Principles: introduction/practices.md
-    - Culture & Collaboration: introduction/culture.md
+      - introduction/index.md
+      - History & Evolution: introduction/history.md
+      - What DevOps Means: introduction/meaning.md
+      - CALMS Framework: introduction/calms.md
+      - Core Practices & Principles: introduction/practices.md
+      - Culture & Collaboration: introduction/culture.md
+      - CALMS: foundations/calms.md
+      - DevOps Practices: foundations/devops-practices.md
+      - History: foundations/history.md
   - Network & Web Fundamentals:
     - concepts/index.md
     - Internet Basics: concepts/internet-basics.md
