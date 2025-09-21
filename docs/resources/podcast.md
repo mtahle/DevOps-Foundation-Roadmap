@@ -16,7 +16,7 @@ Welcome to the DevOps on the Go podcast community! This Arabic podcast provides 
 | Platform | Link | Description |
 |----------|------|-------------|
 | **Anchor** | [DevOps on the Go](https://anchor.fm/devops-on-the-go/) | Main hosting platform with full episode archive |
-| **Spotify** | [Listen on Spotify](https://bit.ly/devops-spotify) | Popular streaming platform |
+| **Spotify** | [Listen on Spotify](https://open.spotify.com/show/24UfF6aMe0AyUIJeckaEf7) | Popular streaming platform |
 | **Apple Podcasts** | [Listen on Apple](https://bit.ly/devops-apple) | iOS and macOS native podcast app |
 | **Google Podcasts** | [Listen on Google](https://bit.ly/devops-google) | Android and web-based listening |
 
@@ -36,7 +36,105 @@ Welcome to the DevOps on the Go podcast community! This Arabic podcast provides 
 | **Facebook Group** | [DevOps Geeks](https://bit.ly/devops-geeks) | Community discussions and Q&A |
 | **Instagram** | [Follow on Instagram](https://bit.ly/devops-insta) | Behind-the-scenes and quick tips |
 
-## 📚 Featured Episode: Episode 5
+## 🎧 All Podcast Episodes
+
+### 📊 Episodes Summary
+
+!!! info "Podcast Statistics"
+    - **Total Episodes**: 10+ episodes across 3 seasons
+    - **Language**: Arabic (العربية)
+    - **Format**: Interview-style and solo discussions
+    - **Topics**: DevOps, Cloud, Security, AI, SRE, Project Management
+
+!!! tip "Quick Navigation"
+    - **[Season 3 (2024)](#season-3-2024)**: Management, Monitoring, Latest trends
+    - **[Season 2 (2024-2025)](#season-2-2024-2025)**: Advanced topics, SRE, DevSecOps, AI
+    - **[Season 1 (2021-2022)](#season-1-original-series-2021-2022)**: Fundamentals and foundations
+
+### Season 3 (2024)
+
+#### Episode 1: كيف تقنع الإدارة بتبني DevOps وفوائده لفريقك؟
+**Duration**: 1 hr 42 min | **Release Date**: August 11, 2024
+
+في هذه الحلقة نناقش مع عصام الزيناتي أهم التحديات التي تواجه تبني الـ DevOps في المؤسسات، وكيفية إقناع أصحاب القرار بفوائده الحقيقية. نتحدث عن العوائق التي قد تعرقل نجاح التحول، وأهم خطوات صانع القرار قبل البدء، مع تسليط الضوء على دور إدارة التغيير وقياس الأداء باستخدام DORA Metrics لضمان استقرار الأعمال وتحقيق نتائج ملموسة.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/0egxMioMLNswr87dhAOzxd)**
+
+#### Episode 2: الموسم الثالث- الحلقة-١ | من الخطأ إلى الحل في أقل من دقيقة: كيف تصمّم نظام مراقبة يُنقذك؟
+**Duration**: 1 hr 21 min | **Release Date**: July 13, 2024
+
+كيف تصمّم نظام مراقبة يُنقذك قبل أن يشعر العميل بوجود مشكلة؟ في هذه الحلقة الافتتاحية من الموسم الثالث، نستضيف المهندس أحمد جاد (Salesforce - AWS - Amazon) للغوص في عالم المراقبة (Monitoring) والرصد (Observability). ما الفرق بينهما؟ كيف تحدد مؤشرات الأداء؟ متى تطلق التنبيه؟ وما هي إشارات الخطر الأربعة التي يجب أن ترصدها دائمًا؟
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/6V8SljjjGsUPYwOZ2YxT4v)**
+
+### Season 2 (2024-2025)
+
+#### Episode 4: ممارسات DevOps في إدارة المشاريع التقنية: ما علاقتها بال Agile؟
+**Duration**: 1 hr 34 min | **Release Date**: February 4, 2024
+
+ما العلاقة بين DevOps ومنهجية Agile؟ هل هما وجهان لعملة واحدة أم أن أحدهما يُكمل الآخر؟ في هذه الحلقة، نأخذك في رحلة مع عبد الوهاب الغامدي، مدير مشاريع تقنية مستقل، لاستكشاف كيف يمكن لممارسات DevOps أن تُحدث نقلة نوعية في إدارة المشاريع التقنية. نناقش إطار عمل CALMS وكيف يبني ثقافة نجاح مستدامة.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/6zvIt67S68sPwmkS5Jksdb)**
+
+#### Episode 3: Site Reliability Engineer - هل هو الوجه الجديد لمهندس DevOps؟
+**Duration**: 1 hr 46 min | **Release Date**: January 9, 2024
+
+في هذه الحلقة، نرجع بالزمن لما قبل ظهور مفهوم DevOps ونحكي عن التحديات التي دفعت العالم التقني نحو ثورة DevOps. نستضيف المهندس أحمد الزعبي، Systems Engineer في AWS، وخبير في Site Reliability Engineering. نركز على تخصص SRE وكيف ظهر كاستجابة لتحديات جديدة، والفرق الحقيقي بينه وبين DevOps. نحكي عن إدارة الحوادث (Incident Management) وأهمية مفاهيم SLA, SLO، وSLI.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/6rB0TmuK9dVO6cpb97hBnB)**
+
+#### Episode 2: DevSecOps: ضرورة أم ترف للمشاريع التقنية
+**Duration**: 1 hr | **Release Date**: December 18, 2024
+
+هل DevOps مسؤول عن الأمان أيضًا؟ في هذه الحلقة نستضيف المهندس زياد أبو لبن لنناقش الفرق بين فريق الأمان وعملية الأمان. نغطي كيف تُنفذ التهديدات السيبرانية الشائعة، أساسيات الأمان قبل نشر التطبيقات، وكيف يتفوق DevSecOps على الحلول التقليدية، مع خطوات عملية لتطبيق DevSecOps في بيئتك.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/40d2C1yJafTVL1p7mxrgyP)**
+
+#### Episode 1: الذكاء الاصطناعي عامل مساعد أم أساسي للديف أوبس؟
+**Duration**: 1 hr 11 min | **Release Date**: November 23, 2024
+
+في هذه الحلقة التي نستهلها بإعلان التعاون مع "DevOps في السيارة"، استعرضنا أسئلة محورية تتعلق بمستقبل DevOps في ظل ثورة الذكاء الاصطناعي التوليدي. ناقشنا احتمالية انتهاء دور DevOps التقليدي، وما إذا كان الذكاء الاصطناعي سيحل محله أم سيساهم في تطويره. تطرقنا إلى تأثير الذكاء الاصطناعي على العمليات الحالية والممارسات المستقبلية.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/5KDpWJ3EN47hznZF6tcwyU)**
+
+### Season 1 - Original Series (2021-2022)
+
+#### Episode 5: بداية الطريق العملي
+**Duration**: 28 min | **Release Date**: November 12, 2022
+
+في هذه الحلقة نمهد الطريق لكل شخص محتار كيف يدخل عالم الديف أوبس ومش متأكد من وين يبدأ. حلقة عملية مليئة بالمراجع والروابط للمواضيع المذكورة.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/1D0mrwczuGnIY6HDPpQfAW)**
+
+#### Episode 4: التطبيق العملي لمبادئ الديف أوبس
+**Duration**: 30 min | **Release Date**: December 16, 2021
+
+استمراراً لتثبيت المفاهيم النظرية والمبادئ الأساسية وربط الجانب النظري بالواقع العملي.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/7vDD9NLovdbWNYcvpAPoeb)**
+
+#### Episode 3: الديف أوبس مش للمهندسين بس
+**Duration**: 10 min | **Release Date**: October 12, 2021
+
+هل صحيح أن الديف أوبس هو تخصص لمهندسي التقنية والتطوير فقط؟ في هذا اللقاء نوضح من هم الأشخاص الذين يحتاجون لتعلم الديف أوبس.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/5OdOubQPogf54q0ebYx3MK)**
+
+#### Episode 2: مبادئ الديف أوبس وفلسفة الشعار
+**Duration**: 32 min | **Release Date**: October 2, 2021
+
+في هذه الحلقة نتناول مبادئ الديف أوبس وفلسفة الشعار حتى نتعمق أكثر بالمفاهيم المتعلقة بالمجال وسبب حاجتنا له.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/1cFcNOC5R0ekaxGjJznqYu)**
+
+#### Episode 1: اللقاء الأول
+**Duration**: 32 min | **Release Date**: September 14, 2021
+
+الحلقة الافتتاحية للبودكاست. نتحدث عن التجربة الشخصية وكيف وصلت لأكون شخص ناجح في مجال الديف أوبس، والهدف هو تحفيز الشباب والمهتمين ليدخلوا في التخصص ونتشارك المعلومات والخبرات معاً.
+
+**[🎙️ Listen on Spotify](https://open.spotify.com/episode/0cKWp6qKUaWOkm6VvGg1bM)**
+
+## 📚 Featured Learning Path: Episode 5
 
 This documentation roadmap is based on **Episode 5** of DevOps on the Go, which provides a comprehensive guide for beginners entering the DevOps field.
 
