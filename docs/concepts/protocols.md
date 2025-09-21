@@ -16,74 +16,71 @@ Understanding network protocols is essential for DevOps engineers to troubleshoo
 
 ### OSI Model vs TCP/IP Model
 
-```mermaid
-flowchart TB
-    subgraph "OSI Model (7 Layers)"
-        A1[7. Application<br/>HTTP, FTP, SSH, DNS]
-        A2[6. Presentation<br/>SSL/TLS, Encryption]  
-        A3[5. Session<br/>Session Management]
-        A4[4. Transport<br/>TCP, UDP]
-        A5[3. Network<br/>IP, ICMP, ARP]
-        A6[2. Data Link<br/>Ethernet, WiFi]
-        A7[1. Physical<br/>Cables, Radio Waves]
-    end
-    
-    subgraph "TCP/IP Model (4 Layers)"
-        B1[Application Layer<br/>HTTP, FTP, SSH, DNS]
-        B2[Transport Layer<br/>TCP, UDP]  
-        B3[Internet Layer<br/>IP, ICMP]
-        B4[Link Layer<br/>Ethernet, WiFi]
-    end
-    
-    A1 --> B1
-    A2 --> B1
-    A3 --> B1
-    A4 --> B2
-    A5 --> B3
-    A6 --> B4
-    A7 --> B4
-```
+    graph TB
+        %% OSI Model
+        subgraph OSI["OSI Model (7 Layers)"]
+            A1["7. Application<br/>HTTP, FTP, SSH, DNS"]
+            A2["6. Presentation<br/>SSL/TLS, Encryption"]  
+            A3["5. Session<br/>Session Management"]
+            A4["4. Transport<br/>TCP, UDP"]
+            A5["3. Network<br/>IP, ICMP, ARP"]
+            A6["2. Data Link<br/>Ethernet, WiFi"]
+            A7["1. Physical<br/>Cables, Radio Waves"]
+        end
+        
+        %% TCP/IP Model
+        subgraph TCP["TCP/IP Model (4 Layers)"]
+            B1["Application Layer<br/>HTTP, FTP, SSH, DNS"]
+            B2["Transport Layer<br/>TCP, UDP"]  
+            B3["Internet Layer<br/>IP, ICMP"]
+            B4["Link Layer<br/>Ethernet, WiFi"]
+        end
+        
+        %% Mappings
+        A1 --> B1
+        A2 --> B1
+        A3 --> B1
+        A4 --> B2
+        A5 --> B3
+        A6 --> B4
+        A7 --> B4
 
 ### Protocol Communication Flow
 
-```mermaid
-sequenceDiagram
-    participant App as Application
-    participant TCP as TCP Layer
-    participant IP as IP Layer
-    participant Eth as Ethernet
-    participant Net as Network
-    
-    App->>TCP: HTTP Request Data
-    TCP->>TCP: Add TCP Header (Port, Sequence)
-    TCP->>IP: TCP Segment
-    IP->>IP: Add IP Header (Source, Destination)  
-    IP->>Eth: IP Packet
-    Eth->>Eth: Add Ethernet Header (MAC Addresses)
-    Eth->>Net: Ethernet Frame
-    
-    Note over Net: Data transmitted across network
-    
-    Net->>Eth: Receive Frame
-    Eth->>IP: Extract Packet
-    IP->>TCP: Extract Segment
-    TCP->>App: Deliver Data
-```
+    sequenceDiagram
+        participant App as Application
+        participant TCP as TCP Layer
+        participant IP as IP Layer
+        participant Eth as Ethernet
+        participant Net as Network
+        
+        App->>+TCP: HTTP Request Data
+        TCP->>+TCP: Add TCP Header (Port, Sequence)
+        TCP->>+IP: TCP Segment
+        IP->>+IP: Add IP Header (Source, Destination)  
+        IP->>+Eth: IP Packet
+        Eth->>+Eth: Add Ethernet Header (MAC Addresses)
+        Eth->>+Net: Ethernet Frame
+        
+        Note over Net: Data transmitted across network
+        
+        Net->>-Eth: Receive Frame
+        Eth->>-IP: Extract Packet
+        IP->>-TCP: Extract Segment
+        TCP->>-App: Deliver Data
 
 ## IP Addressing and Subnetting
 
 ### IPv4 Addressing
 
-```mermaid
-flowchart LR
-    A[192.168.1.100/24] --> B[Network: 192.168.1.0]
-    A --> C[Host: 100]
-    A --> D[Subnet Mask: /24 or 255.255.255.0]
-    
-    style B fill:#e8f5e8
-    style C fill:#e3f2fd
-    style D fill:#fff3e0
-```
+    graph LR
+        A["192.168.1.100/24"] --> B["Network: 192.168.1.0"]
+        A --> C["Host: 100"]
+        A --> D["Subnet Mask: /24 or 255.255.255.0"]
+        
+        style B fill:#e8f5e8
+        style C fill:#e3f2fd
+        style D fill:#fff3e0
 
 #### **Address Classes**
 
@@ -96,23 +93,15 @@ flowchart LR
 #### **Special IP Addresses**
 
 ```bash
-# Loopback (localhost)
-127.0.0.1        # IPv4 loopback
-::1              # IPv6 loopback
-
-# Private IP Ranges (RFC 1918)
-10.0.0.0/8       # 10.0.0.0 - 10.255.255.255
-172.16.0.0/12    # 172.16.0.0 - 172.31.255.255  
-192.168.0.0/16   # 192.168.0.0 - 192.168.255.255
-
-# Link-Local
-169.254.0.0/16   # APIPA addresses
-
-# Multicast
-224.0.0.0/4      # Multicast addresses
-
-# Broadcast
-255.255.255.255  # Limited broadcast
+    # View certificate information
+    openssl x509 -text -noout -in certificate.crt
+    
+    # Generate CSR
+    openssl req -new -key private.key -out server.csr
+    
+    # Generate self-signed certificate
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+        -keyout private.key -out certificate.crt
 ```
 
 ### IPv6 Addressing
@@ -125,6 +114,7 @@ flowchart LR
 ```
 
 #### **IPv6 Address Types**
+
 - **Global Unicast**: 2000::/3 (Internet routable)
 - **Link-Local**: fe80::/10 (Local network only)  
 - **Unique Local**: fc00::/7 (Private networks)
@@ -152,28 +142,27 @@ Mgmt Subnet:   10.0.10.0/24  # Management, monitoring
 
 ### TCP (Transmission Control Protocol)
 
-```mermaid
-sequenceDiagram
-    participant C as Client
-    participant S as Server
-    
-    Note over C,S: Three-Way Handshake
-    C->>S: SYN (seq=100)
-    S->>C: SYN-ACK (seq=200, ack=101)
-    C->>S: ACK (seq=101, ack=201)
-    
-    Note over C,S: Data Transfer
-    C->>S: Data (seq=101)
-    S->>C: ACK (ack=201)
-    
-    Note over C,S: Connection Termination
-    C->>S: FIN (seq=201)
-    S->>C: ACK (ack=202)
-    S->>C: FIN (seq=300)
-    C->>S: ACK (ack=301)
-```
+    sequenceDiagram
+        participant C as Client
+        participant S as Server
+        
+        Note over C,S: Three-Way Handshake
+        C->>S: SYN (seq=100)
+        S->>C: SYN-ACK (seq=200, ack=101)
+        C->>S: ACK (seq=101, ack=201)
+        
+        Note over C,S: Data Transfer
+        C->>S: Data (seq=101)
+        S->>C: ACK (ack=201)
+        
+        Note over C,S: Connection Termination
+        C->>S: FIN (seq=201)
+        S->>C: ACK (ack=202)
+        S->>C: FIN (seq=300)
+        C->>S: ACK (ack=301)
 
 #### **TCP Characteristics**
+
 - **Reliable**: Guaranteed delivery with error checking
 - **Connection-oriented**: Establishes session before data transfer
 - **Flow Control**: Manages data transmission rate
@@ -181,21 +170,20 @@ sequenceDiagram
 
 #### **TCP Headers and Flags**
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|          Source Port          |       Destination Port        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                        Sequence Number                        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Acknowledgment Number                      |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| Flags |           Window Size           |        Checksum     |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+     0                   1                   2                   3
+     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |          Source Port          |       Destination Port        |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |                        Sequence Number                        |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |                    Acknowledgment Number                      |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    | Flags |           Window Size           |        Checksum     |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 **TCP Flags:**
+
 - **SYN**: Synchronize (establish connection)
 - **ACK**: Acknowledgment
 - **FIN**: Finish (close connection)  
@@ -205,22 +193,22 @@ sequenceDiagram
 
 ### UDP (User Datagram Protocol)
 
-```mermaid
-flowchart LR
-    A[Client] -->|UDP Datagram| B[Server]
-    B -->|UDP Response| A
-    
-    style A fill:#e3f2fd
-    style B fill:#e8f5e8
-```
+    graph LR
+        A["Client"] -->|UDP Datagram| B["Server"]
+        B -->|UDP Response| A
+        
+        style A fill:#e3f2fd
+        style B fill:#e8f5e8
 
 #### **UDP Characteristics**
+
 - **Connectionless**: No session establishment
 - **Fast**: Lower overhead than TCP
 - **Unreliable**: No guaranteed delivery
 - **Stateless**: Each packet independent
 
 #### **UDP Use Cases**
+
 - **DNS Queries**: Quick lookups (53/udp)
 - **Video Streaming**: Real-time data where speed > reliability  
 - **Online Gaming**: Low-latency communication
@@ -237,7 +225,7 @@ DNS translates human-readable domain names into IP addresses that computers can 
   
   Detailed explanation of DNS functionality and its importance in web infrastructure.
 
-## File Transfer Protocols
+## FTP Protocols
 
 ### FTP & SFTP
 
@@ -257,17 +245,15 @@ HTTP and HTTPS are the foundation of web communication, essential for DevOps eng
 
 ### HTTP Protocol Deep Dive
 
-```mermaid
-sequenceDiagram
-    participant C as Client
-    participant S as Server
-    
-    C->>S: HTTP Request
-    Note over C,S: GET /api/users HTTP/1.1<br/>Host: example.com<br/>User-Agent: Mozilla/5.0
-    
-    S->>C: HTTP Response  
-    Note over C,S: HTTP/1.1 200 OK<br/>Content-Type: application/json<br/>Content-Length: 1234<br/><br/>{"users": [...]}
-```
+    sequenceDiagram
+        participant C as Client
+        participant S as Server
+        
+        C->>+S: HTTP Request
+        Note over C,S: GET /api/users HTTP/1.1<br/>Host: example.com<br/>User-Agent: Mozilla/5.0
+        
+        S-->>-C: HTTP Response  
+        Note over C,S: HTTP/1.1 200 OK<br/>Content-Type: application/json<br/>Content-Length: 1234<br/><br/>{"users": [...]}
 
 #### **HTTP Methods and Use Cases**
 
@@ -339,21 +325,19 @@ X-Response-Time: 123ms
 
 ### HTTPS and TLS/SSL
 
-```mermaid
-sequenceDiagram
-    participant C as Client  
-    participant S as Server
-    
-    Note over C,S: TLS Handshake
-    C->>S: ClientHello (supported ciphers)
-    S->>C: ServerHello (chosen cipher)
-    S->>C: Certificate + ServerKeyExchange
-    C->>S: ClientKeyExchange (pre-master secret)
-    
-    Note over C,S: Symmetric encryption established
-    C->>S: Encrypted HTTP Request
-    S->>C: Encrypted HTTP Response
-```
+    sequenceDiagram
+        participant C as Client  
+        participant S as Server
+        
+        Note over C,S: TLS Handshake
+        C->>+S: ClientHello (supported ciphers)
+        S-->>-C: ServerHello (chosen cipher)
+        S-->>+C: Certificate + ServerKeyExchange
+        C->>-S: ClientKeyExchange (pre-master secret)
+        
+        Note over C,S: Symmetric encryption established
+        C->>+S: Encrypted HTTP Request
+        S-->>-C: Encrypted HTTP Response
 
 #### **TLS/SSL Certificate Types**
 
@@ -395,25 +379,23 @@ SSH is the backbone of secure remote administration and automation in DevOps env
 
 ### SSH Connection Process
 
-```mermaid
-sequenceDiagram
-    participant C as SSH Client
-    participant S as SSH Server
-    
-    C->>S: Connection Request (port 22)
-    S->>C: Server Host Key
-    C->>C: Verify Host Key
-    
-    Note over C,S: Authentication Phase
-    C->>S: Authentication Request
-    S->>C: Authentication Challenge
-    C->>S: Authentication Response
-    S->>C: Authentication Success
-    
-    Note over C,S: Secure Channel Established
-    C->>S: Encrypted Commands
-    S->>C: Encrypted Responses
-```
+    sequenceDiagram
+        participant C as SSH Client
+        participant S as SSH Server
+        
+        C->>+S: Connection Request (port 22)
+        S-->>-C: Server Host Key
+        C->>+C: Verify Host Key
+        
+        Note over C,S: Authentication Phase
+        C->>+S: Authentication Request
+        S-->>-C: Authentication Challenge
+        C->>+S: Authentication Response
+        S-->>-C: Authentication Success
+        
+        Note over C,S: Secure Channel Established
+        C->>+S: Encrypted Commands
+        S-->>-C: Encrypted Responses
 
 ### SSH Authentication Methods
 
@@ -578,28 +560,26 @@ Telnet                     # Unencrypted remote access
 
 ### Network Diagnostic Commands
 
-```bash
-# Test connectivity and protocols
-ping google.com                    # Basic connectivity (ICMP)
-telnet google.com 80               # Test TCP port connectivity
-nc -zv google.com 80               # Port scanning with netcat
-nmap -sT -p 80,443 google.com      # Port scanning with nmap
-
-# HTTP/HTTPS testing
-curl -I https://example.com         # Headers only
-curl -v https://example.com         # Verbose output
-curl -k https://example.com         # Ignore SSL errors
-curl --connect-timeout 10 https://example.com
-
-# SSL/TLS testing
-openssl s_client -connect example.com:443 -servername example.com
-openssl s_client -connect example.com:443 -verify_return_error
-
-# DNS testing
-nslookup example.com               # Basic DNS lookup
-dig @8.8.8.8 example.com          # Test specific DNS server
-host -t MX example.com             # Specific record type
-```
+    # Test connectivity and protocols
+    ping google.com                    # Basic connectivity (ICMP)
+    telnet google.com 80               # Test TCP port connectivity
+    nc -zv google.com 80               # Port scanning with netcat
+    nmap -sT -p 80,443 google.com      # Port scanning with nmap
+    
+    # HTTP/HTTPS testing
+    curl -I https://example.com         # Headers only
+    curl -v https://example.com         # Verbose output
+    curl -k https://example.com         # Ignore SSL errors
+    curl --connect-timeout 10 https://example.com
+    
+    # SSL/TLS testing
+    openssl s_client -connect example.com:443 -servername example.com
+    openssl s_client -connect example.com:443 -verify_return_error
+    
+    # DNS testing
+    nslookup example.com               # Basic DNS lookup
+    dig @8.8.8.8 example.com          # Test specific DNS server
+    host -t MX example.com             # Specific record type
 
 ### Common Protocol Issues and Solutions
 
@@ -680,6 +660,7 @@ ssl_expiry_check "example.com"
 ### Protocol Security Checklist
 
 #### **Transport Security**
+
 - ✅ Use TLS 1.2 or higher for all encrypted communications
 - ✅ Disable weak cipher suites and protocols (SSLv3, TLS 1.0, TLS 1.1)
 - ✅ Implement HTTP Strict Transport Security (HSTS)
@@ -687,6 +668,7 @@ ssl_expiry_check "example.com"
 - ✅ Regular SSL/TLS certificate rotation
 
 #### **Authentication Security**
+
 - ✅ Disable password authentication for SSH (use keys only)
 - ✅ Implement multi-factor authentication where possible
 - ✅ Use service accounts with minimal privileges
@@ -694,6 +676,7 @@ ssl_expiry_check "example.com"
 - ✅ Monitor authentication logs and failed attempts
 
 #### **Network Security**
+
 - ✅ Change default ports for critical services
 - ✅ Implement network segmentation and firewalls
 - ✅ Use VPN or bastion hosts for remote access
@@ -702,43 +685,46 @@ ssl_expiry_check "example.com"
 
 ### Protocol Security Configuration
 
-```bash
-# Secure SSH configuration checklist
-sed -i 's/^#Port 22/Port 2222/' /etc/ssh/sshd_config
-sed -i 's/^#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
-sed -i 's/^#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
-sed -i 's/^#Protocol 2/Protocol 2/' /etc/ssh/sshd_config
-
-# Restart SSH service
-systemctl restart sshd
-
-# Firewall configuration (ufw example)
-ufw allow 2222/tcp comment 'SSH'
-ufw allow 80/tcp comment 'HTTP'
-ufw allow 443/tcp comment 'HTTPS'
-ufw enable
-```
+    # Secure SSH configuration checklist
+    sed -i 's/^#Port 22/Port 2222/' /etc/ssh/sshd_config
+    sed -i 's/^#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+    sed -i 's/^#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+    sed -i 's/^#Protocol 2/Protocol 2/' /etc/ssh/sshd_config
+    
+    # Restart SSH service
+    systemctl restart sshd
+    
+    # Firewall configuration (ufw example)
+    ufw allow 2222/tcp comment 'SSH'
+    ufw allow 80/tcp comment 'HTTP'
+    ufw allow 443/tcp comment 'HTTPS'
+    ufw enable
 
 ## Learning Resources
 
 ### **Protocol Fundamentals**
+
 - **[HTTP Documentation | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP)** - Comprehensive HTTP protocol reference
 - **[The HTTPS Protocol Explained | Medium](https://anushadasari.medium.com/the-https-protocol-explained-under-the-hood-c7bd9f9aaa7b)** - HTTPS security deep dive
 - **[SSH Command in Linux with Examples | GeeksforGeeks](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/)** - Practical SSH usage guide
 
 ### **IP Networking**
+
 - **[Dedicated IP vs Shared IP Address | Kinsta](https://kinsta.com/blog/dedicated-ip-address/)** - IP addressing concepts
 - **[Subnetting Tutorial | Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html)** - Network subnetting guide
 
-### **Security Resources**  
+### **Security Resources**
+
 - **[OWASP Transport Layer Protection](https://owasp.org/www-project-cheat-sheets/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html)** - Security best practices
 - **[Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)** - Secure SSL/TLS configurations
 
 ### **File Transfer Protocols**
+
 - **[FTP vs SFTP: What's the Difference? | Kinsta](https://kinsta.com/knowledgebase/ftp-vs-sftp/)** - Secure file transfer comparison
 - **[rsync Tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories)** - Efficient file synchronization
 
 ### **Troubleshooting Tools**
+
 - **[Wireshark Network Analysis](https://www.wireshark.org/docs/)** - Packet capture and analysis
 - **[nmap Network Discovery](https://nmap.org/book/man.html)** - Network scanning and reconnaissance
 - **[curl User Manual](https://curl.se/docs/manual.html)** - HTTP client troubleshooting
@@ -748,21 +734,25 @@ ufw enable
 Protocol expertise is essential for:
 
 ### **Network Engineering**
+
 - Design and implement secure network architectures
 - Troubleshoot complex connectivity issues  
 - Optimize network performance and reliability
 
 ### **Security Engineering**
+
 - Implement defense-in-depth strategies
 - Conduct security assessments and penetration testing
 - Design secure communication protocols
 
-### **DevOps Engineering**  
+### **DevOps Engineering**
+
 - Automate secure deployment pipelines
 - Implement monitoring and alerting systems
 - Design fault-tolerant distributed systems
 
 ### **Cloud Architecture**
+
 - Design multi-region, multi-cloud architectures
 - Implement service mesh and API gateway patterns
 - Optimize for performance, security, and cost
@@ -785,16 +775,19 @@ Understanding protocols enables you to:
 ## References and Further Reading
 
 ### **Protocol Specifications**
+
 1. **[RFC 7231 - HTTP/1.1 Semantics](https://tools.ietf.org/html/rfc7231)** - HTTP protocol specification
 2. **[RFC 8446 - TLS 1.3](https://tools.ietf.org/html/rfc8446)** - Latest TLS specification
 3. **[RFC 4253 - SSH Transport Layer](https://tools.ietf.org/html/rfc4253)** - SSH protocol specification
 
-### **Security Standards**  
-4. **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** - Security best practices
-5. **[OWASP Application Security](https://owasp.org/)** - Web application security guidance
-6. **[CIS Controls](https://www.cisecurity.org/controls/)** - Cybersecurity implementation guidelines
+### **Security Standards**
+
+1. **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)** - Security best practices
+2. **[OWASP Application Security](https://owasp.org/)** - Web application security guidance
+3. **[CIS Controls](https://www.cisecurity.org/controls/)** - Cybersecurity implementation guidelines
 
 ### **Networking Resources**
-7. **[TCP/IP Illustrated Series](https://www.informit.com/series/series_detail.aspx?ser=4068590)** - Comprehensive networking reference
-8. **[High Performance Browser Networking](https://hpbn.co/)** - Web performance optimization
-9. **[Computer Networks: A Systems Approach](https://book.systemsapproach.org/)** - Modern networking concepts
+
+1. **[TCP/IP Illustrated Series](https://www.informit.com/series/series_detail.aspx?ser=4068590)** - Comprehensive networking reference
+2. **[High Performance Browser Networking](https://hpbn.co/)** - Web performance optimization
+3. **[Computer Networks: A Systems Approach](https://book.systemsapproach.org/)** - Modern networking concepts

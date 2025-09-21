@@ -12,17 +12,15 @@ Thank you for your interest in improving the DevOps Foundation Roadmap.
 
 ## Structure Overview
 
-```text
-/docs
-  introduction/   # DevOps mindset & principles (Foundations)
-  concepts/       # Internet, web, protocols, DNS, hosting
-  linux/          # OS & system operations
-  containers/     # Containerization & orchestration
-  automation/     # CI/CD & infrastructure automation
-  monitoring/     # Observability foundations
-  advanced/       # Placeholders for future advanced topics
-  resources/      # External references & podcast context
-```
+    /docs
+      introduction/   # DevOps mindset & principles (Foundations)
+      concepts/       # Internet, web, protocols, DNS, hosting
+      linux/          # OS & system operations
+      containers/     # Containerization & orchestration
+      automation/     # CI/CD & infrastructure automation
+      monitoring/     # Observability foundations
+      advanced/       # Placeholders for future advanced topics
+      resources/      # External references & podcast context
 
 ## Adding Content
 
@@ -36,9 +34,7 @@ Thank you for your interest in improving the DevOps Foundation Roadmap.
 
 When expertise or depth is pending, use the following format to indicate areas for future expansion:
 
-```text
-> Placeholder: This section will be expanded with examples covering X, Y, Z.
-```
+    > Placeholder: This section will be expanded with examples covering X, Y, Z.
 
 ### Example Placeholder Usage
 
@@ -70,10 +66,8 @@ Do not leave empty headings.
 
 Prefer small, readable flows:
 
-```mermaid
-flowchart LR
-  A[Input] --> B[Process] --> C[Outcome]
-```
+    flowchart LR
+      A[Input] --> B[Process] --> C[Outcome]
 
 ## Advanced Topics Roadmap Contributions
 
@@ -90,6 +84,7 @@ Arabic summaries are planned but not yet included. When enabled:
 - Add a short Arabic abstract under the main H1 separated by a horizontal rule.
 
 ## Quality Checklist Before PR
+
 
 - No emojis
 - No trailing spaces / inconsistent blank lines

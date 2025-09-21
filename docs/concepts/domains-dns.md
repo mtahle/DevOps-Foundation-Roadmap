@@ -18,63 +18,68 @@ DNS (Domain Name System) is often called the "phonebook of the internet." It tra
 
 ### DNS Resolution Process
 
-```mermaid
-sequenceDiagram
-    participant U as User Browser
-    participant R as Recursive Resolver
-    participant Root as Root Server
-    participant TLD as TLD Server (.com)
-    participant Auth as Authoritative Server
-    participant Web as Web Server
-    
-    U->>R: Query: example.com
-    R->>Root: Where is .com?
-    Root-->>R: .com TLD servers
-    R->>TLD: Where is example.com?
-    TLD-->>R: example.com nameservers
-    R->>Auth: IP for example.com?
-    Auth-->>R: 192.0.2.1
-    R-->>U: 192.0.2.1
-    U->>Web: HTTP Request to 192.0.2.1
-    Web-->>U: Website Content
-```
+    sequenceDiagram
+        participant U as Browser
+        participant R as DNS Resolver
+        participant Root as Root DNS
+        participant TLD as TLD Server
+        participant Auth as Auth Server
+        participant Web as Web Server
+        
+        U->>+R: Query: example.com
+        R->>+Root: Query .com servers
+        Root-->>-R: TLD server list
+        R->>+TLD: Query example.com
+        TLD-->>-R: Auth nameservers
+        R->>+Auth: Query IP
+        Auth-->>-R: IP: 192.0.2.1
+        R-->>-U: Return IP
+        U->>+Web: HTTP Request
+        Web-->>-U: Response
 
 ### DNS Hierarchy
 
 ```mermaid
-flowchart TD
-    A[Root Servers (.)] --> B[Top Level Domain (.com)]
-    A --> C[Country Code TLD (.uk)]
-    A --> D[Generic TLD (.org)]
+graph TD
+    subgraph DNS_Hierarchy
+        A[Root (.)] --> B[gTLD (.com)]
+        A --> C[ccTLD (.uk)]
+        A --> D[New gTLD (.org)]
+        
+        B --> E[example.com]
+        E --> F[www.example.com]
+        E --> G[api.example.com]
+        E --> H[mail.example.com]
+    end
     
-    B --> E[Second Level (example.com)]
-    E --> F[Subdomain (www.example.com)]
-    E --> G[Subdomain (api.example.com)]
-    E --> H[Subdomain (mail.example.com)]
+    classDef root fill:#ff9999
+    classDef tld fill:#99ccff
+    classDef domain fill:#99ff99
+    classDef sub fill:#ffff99
     
-    style A fill:#ff9999
-    style B fill:#99ccff
-    style E fill:#99ff99
-    style F fill:#ffff99
+    class A root
+    class B,C,D tld
+    class E domain
+    class F,G,H sub
 ```
 
 ## Domain Name Structure
 
 ### Anatomy of a Domain Name
 
-```
-https://blog.api.example.com:443/articles/dns-guide?page=2#section1
-│      │    │   │       │   │   │                    │      │
-│      │    │   │       │   │   │                    │      └─ Fragment
-│      │    │   │       │   │   │                    └─ Query Parameters
-│      │    │   │       │   │   └─ Path
-│      │    │   │       │   └─ Port
-│      │    │   │       └─ Second Level Domain
-│      │    │   └─ Top Level Domain
-│      │    └─ Third Level Domain (Subdomain)
-│      └─ Fourth Level Domain (Subdomain)
-└─ Protocol/Scheme
-```
+
+    https://blog.api.example.com:443/articles/dns-guide?page=2#section1
+    │      │    │   │       │   │   │                    │      │
+    │      │    │   │       │   │   │                    │      └─ Fragment
+    │      │    │   │       │   │   │                    └─ Query Parameters
+    │      │    │   │       │   │   └─ Path
+    │      │    │   │       │   └─ Port
+    │      │    │   │       └─ Second Level Domain
+    │      │    │   └─ Top Level Domain
+    │      │    └─ Third Level Domain (Subdomain)
+    │      └─ Fourth Level Domain (Subdomain)
+    └─ Protocol/Scheme
+
 
 #### **Domain Components**
 
@@ -87,20 +92,18 @@ https://blog.api.example.com:443/articles/dns-guide?page=2#section1
 
 ### URL Structure and Components
 
-```mermaid
-flowchart LR
-    A[Protocol://] --> B[Subdomain.]
-    B --> C[Domain.]
-    C --> D[TLD]
-    D --> E[:Port]
-    E --> F[/Path]
-    F --> G[?Query]
-    G --> H[#Fragment]
-    
-    style A fill:#e3f2fd
-    style C fill:#e8f5e8
-    style F fill:#fff3e0
-```
+    flowchart LR
+        A[Protocol://] --> B[Subdomain.]
+        B --> C[Domain.]
+        C --> D[TLD]
+        D --> E[:Port]
+        E --> F[/Path]
+        F --> G[?Query]
+        G --> H[#Fragment]
+        
+        style A fill:#e3f2fd
+        style C fill:#e8f5e8
+        style F fill:#fff3e0
 
 #### **URL Components Explained**
 
@@ -120,37 +123,39 @@ https://api.staging.example.com:8443/v1/users?limit=10&page=2#results
 
 ### Name Server Types
 
-```mermaid
-flowchart TB
-    subgraph "DNS Infrastructure"
-        A[Root Nameservers<br/>13 globally distributed]
-        B[TLD Nameservers<br/>.com, .org, .net, etc.]
-        C[Authoritative Nameservers<br/>Your domain's DNS]
-        D[Recursive Resolvers<br/>ISP, Google, Cloudflare]
-    end
-    
-    E[User Query] --> D
-    D --> A
-    D --> B  
-    D --> C
-    C --> D
-    D --> E
-    
-    style A fill:#ff9999
-    style B fill:#99ccff
-    style C fill:#99ff99
-    style D fill:#ffff99
-```
+    flowchart TB
+        subgraph "DNS Infrastructure"
+            A[Root Nameservers<br/>13 globally distributed]
+            B[TLD Nameservers<br/>.com, .org, .net, etc.]
+            C[Authoritative Nameservers<br/>Your domain's DNS]
+            D[Recursive Resolvers<br/>ISP, Google, Cloudflare]
+        end
+        
+        E[User Query] --> D
+        D --> A
+        D --> B  
+        D --> C
+        C --> D
+        D --> E
+        
+        style A fill:#ff9999
+        style B fill:#99ccff
+        style C fill:#99ff99
+        style D fill:#ffff99
 
 #### **Authoritative Name Servers**
+
 - **Primary (Master)**: Contains the original zone file
 - **Secondary (Slave)**: Copies data from primary server
 - **Purpose**: Provide definitive answers for your domain
 
+
 #### **Recursive Resolvers**
+
 - **Function**: Query other servers on behalf of clients
 - **Caching**: Store responses to improve performance
 - **Examples**: 8.8.8.8 (Google), 1.1.1.1 (Cloudflare)
+
 
 ### DNS Record Types
 
@@ -185,112 +190,113 @@ flowchart LR
 
 #### **Modern DNS Records**
 
-**CAA (Certification Authority Authorization)**
-```
-example.com. CAA 0 issue "letsencrypt.org"
-example.com. CAA 0 issuewild ";"
-example.com. CAA 0 iodef "mailto:security@example.com"
-```
 
-**DNAME (Delegation Name)**
-```
-old-brand.com. DNAME new-brand.com.
-```
+### CAA (Certification Authority Authorization)
 
-**ALIAS/ANAME (Apex Domain CDN)**
-```
-example.com. ALIAS load-balancer-123456.us-west-2.elb.amazonaws.com.
-```
+    example.com. CAA 0 issue "letsencrypt.org"
+    example.com. CAA 0 issuewild ";"
+    example.com. CAA 0 iodef "mailto:security@example.com"
+
+
+
+### DNAME (Delegation Name)
+
+    old-brand.com. DNAME new-brand.com.
+
+### ALIAS/ANAME (Apex Domain CDN)
+
+    example.com. ALIAS load-balancer-123456.us-west-2.elb.amazonaws.com.
+
 
 ## DNS Configuration Patterns for DevOps
 
 ### Environment-Based Subdomains
 
-```mermaid
-flowchart TB
-    subgraph "Production Environment"
-        A[app.example.com]
-        B[api.example.com] 
-        C[cdn.example.com]
-    end
-    
-    subgraph "Staging Environment"  
-        D[app.staging.example.com]
-        E[api.staging.example.com]
-        F[cdn.staging.example.com]
-    end
-    
-    subgraph "Development Environment"
-        G[app.dev.example.com]
-        H[api.dev.example.com]
-        I[cdn.dev.example.com]
-    end
-    
-    style A fill:#e8f5e8
-    style D fill:#fff3e0  
-    style G fill:#e3f2fd
-```
+    flowchart TB
+        subgraph "Production Environment"
+            A[app.example.com]
+            B[api.example.com] 
+            C[cdn.example.com]
+        end
+        
+        subgraph "Staging Environment"  
+            D[app.staging.example.com]
+            E[api.staging.example.com]
+            F[cdn.staging.example.com]
+        end
+        
+        subgraph "Development Environment"
+            G[app.dev.example.com]
+            H[api.dev.example.com]
+            I[cdn.dev.example.com]
+        end
+        
+        style A fill:#e8f5e8
+        style D fill:#fff3e0  
+        style G fill:#e3f2fd
 
 ### Load Balancing Strategies
 
 #### **DNS Round Robin**
-```
-api.example.com. 300 IN A 192.0.2.10
-api.example.com. 300 IN A 192.0.2.11  
-api.example.com. 300 IN A 192.0.2.12
-```
+
+    api.example.com. 300 IN A 192.0.2.10
+    api.example.com. 300 IN A 192.0.2.11  
+    api.example.com. 300 IN A 192.0.2.12
+
+
 
 #### **Geographic DNS Routing**
-```
-# North America
-api-na.example.com. 300 IN A 192.0.2.10
-# Europe  
-api-eu.example.com. 300 IN A 198.51.100.10
-# Asia-Pacific
-api-ap.example.com. 300 IN A 203.0.113.10
 
-# Global alias with geographic routing
-api.example.com. 300 IN CNAME api-na.example.com.
-```
+    # North America
+    api-na.example.com. 300 IN A 192.0.2.10
+    # Europe  
+    api-eu.example.com. 300 IN A 198.51.100.10
+    # Asia-Pacific
+    api-ap.example.com. 300 IN A 203.0.113.10
+
+    # Global alias with geographic routing
+    api.example.com. 300 IN CNAME api-na.example.com.
+
+
 
 #### **Health Check Integration**
-```bash
-# Healthcheck-based DNS updates
-#!/bin/bash
-if curl -f http://192.0.2.10/health; then
-    # Server healthy, ensure DNS record exists
-    aws route53 change-resource-record-sets --hosted-zone-id Z123 \
-      --change-batch '{"Changes": [{"Action": "UPSERT", "ResourceRecordSet": {...}}]}'
-else
-    # Server unhealthy, remove from DNS
-    aws route53 change-resource-record-sets --hosted-zone-id Z123 \
-      --change-batch '{"Changes": [{"Action": "DELETE", "ResourceRecordSet": {...}}]}'
-fi
-```
+
+    # Healthcheck-based DNS updates
+    #!/bin/bash
+    if curl -f http://192.0.2.10/health; then
+        # Server healthy, ensure DNS record exists
+        aws route53 change-resource-record-sets --hosted-zone-id Z123 \
+          --change-batch '{"Changes": [{"Action": "UPSERT", "ResourceRecordSet": {...}}]}'
+    else
+        # Server unhealthy, remove from DNS
+        aws route53 change-resource-record-sets --hosted-zone-id Z123 \
+          --change-batch '{"Changes": [{"Action": "DELETE", "ResourceRecordSet": {...}}]}'
+    fi
+
+
 
 ### Service Discovery Patterns
 
 #### **SRV Records for Microservices**
-```
+
+```dns
 _http._tcp.auth-service.example.com. 300 IN SRV 10 5 8080 auth-1.example.com.
 _http._tcp.auth-service.example.com. 300 IN SRV 10 5 8080 auth-2.example.com.
 _grpc._tcp.user-service.example.com. 300 IN SRV 10 5 9090 user-1.example.com.
 ```
 
+
+
 #### **Consul DNS Integration**
-```
-user-service.service.consul. 300 IN A 10.0.1.100
-user-service.service.consul. 300 IN A 10.0.1.101
-```
+    user-service.service.consul. 300 IN A 10.0.1.100
+    user-service.service.consul. 300 IN A 10.0.1.101
 
 #### **Kubernetes DNS**
-```
-# Service DNS pattern
-<service-name>.<namespace>.svc.cluster.local
-
-# Example
-api-service.production.svc.cluster.local
-```
+    # Service DNS pattern
+    <service-name>.<namespace>.svc.cluster.local
+    
+    # Example
+    api-service.production.svc.cluster.local
 
 ## DNS Troubleshooting and Monitoring
 
@@ -298,93 +304,85 @@ api-service.production.svc.cluster.local
 
 #### **Command Line Tools**
 
-```bash
-# dig - Most comprehensive DNS lookup tool
-dig example.com                    # Basic A record lookup
-dig @8.8.8.8 example.com          # Query specific DNS server  
-dig example.com MX                 # Query specific record type
-dig +trace example.com             # Trace DNS resolution path
-dig +short example.com             # Short output format
-
-# nslookup - Interactive DNS tool
-nslookup example.com
-nslookup
-> set type=MX
-> example.com
-> exit
-
-# host - Simple DNS lookup
-host example.com                   # Basic lookup
-host -t MX example.com            # Specific record type
-host -a example.com               # All records
-
-# systemd-resolve (modern Linux)
-systemd-resolve example.com       # Query system resolver
-systemd-resolve --status          # Show resolver configuration
-```
+    # dig - Most comprehensive DNS lookup tool
+    dig example.com                    # Basic A record lookup
+    dig @8.8.8.8 example.com          # Query specific DNS server  
+    dig example.com MX                 # Query specific record type
+    dig +trace example.com             # Trace DNS resolution path
+    dig +short example.com             # Short output format
+    
+    # nslookup - Interactive DNS tool
+    nslookup example.com
+    nslookup
+    > set type=MX
+    > example.com
+    > exit
+    
+    # host - Simple DNS lookup
+    host example.com                   # Basic lookup
+    host -t MX example.com            # Specific record type
+    host -a example.com               # All records
+    
+    # systemd-resolve (modern Linux)
+    systemd-resolve example.com       # Query system resolver
+    systemd-resolve --status          # Show resolver configuration
 
 #### **Advanced DNS Debugging**
 
-```bash
-# Check DNS propagation globally
-dig +short @1.1.1.1 example.com      # Cloudflare DNS
-dig +short @8.8.8.8 example.com      # Google DNS  
-dig +short @208.67.222.222 example.com # OpenDNS
-
-# Reverse DNS lookup
-dig -x 192.0.2.1
-
-# Check DNSSEC validation
-dig +dnssec example.com
-
-# Monitor DNS response times
-dig +stats example.com
-
-# Bulk DNS testing
-for server in 1.1.1.1 8.8.8.8 208.67.222.222; do
-    echo "Testing $server:"
-    dig +short @$server example.com
-done
-```
+    # Check DNS propagation globally
+    dig +short @1.1.1.1 example.com      # Cloudflare DNS
+    dig +short @8.8.8.8 example.com      # Google DNS  
+    dig +short @208.67.222.222 example.com # OpenDNS
+    
+    # Reverse DNS lookup
+    dig -x 192.0.2.1
+    
+    # Check DNSSEC validation
+    dig +dnssec example.com
+    
+    # Monitor DNS response times
+    dig +stats example.com
+    
+    # Bulk DNS testing
+    for server in 1.1.1.1 8.8.8.8 208.67.222.222; do
+        echo "Testing $server:"
+        dig +short @$server example.com
+    done
 
 ### DNS Performance Monitoring
 
-```mermaid
-flowchart TB
-    A[DNS Query] --> B{Response Time}
-    B -->|< 50ms| C[Excellent]
-    B -->|50-100ms| D[Good]
-    B -->|100-200ms| E[Acceptable]
-    B -->|> 200ms| F[Poor - Investigate]
-    
-    F --> G[Check TTL Values]
-    F --> H[Verify DNS Servers]
-    F --> I[Analyze Network Path]
-    
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#ffeb3b
-    style F fill:#ffcdd2
-```
+    flowchart TB
+        A[DNS Query] --> B{Response Time}
+        B -->|< 50ms| C[Excellent]
+        B -->|50-100ms| D[Good]
+        B -->|100-200ms| E[Acceptable]
+        B -->|> 200ms| F[Poor - Investigate]
+        
+        F --> G[Check TTL Values]
+        F --> H[Verify DNS Servers]
+        F --> I[Analyze Network Path]
+        
+        style C fill:#e8f5e8
+        style D fill:#fff3e0
+        style E fill:#ffeb3b
+        style F fill:#ffcdd2
 
 #### **Monitoring Scripts**
 
-```bash
-#!/bin/bash
-# DNS monitoring script
-DOMAIN="example.com"
-DNS_SERVERS=("1.1.1.1" "8.8.8.8" "208.67.222.222")
-THRESHOLD=100  # milliseconds
-
-for server in "${DNS_SERVERS[@]}"; do
-    response_time=$(dig +stats @$server $DOMAIN | grep "Query time:" | awk '{print $4}')
+    #!/bin/bash
+    # DNS monitoring script
+    DOMAIN="example.com"
+    DNS_SERVERS=("1.1.1.1" "8.8.8.8" "208.67.222.222")
+    THRESHOLD=100  # milliseconds
     
-    if [ "$response_time" -gt "$THRESHOLD" ]; then
-        echo "ALERT: DNS server $server slow response: ${response_time}ms"
-        # Send alert (email, Slack, PagerDuty, etc.)
-    fi
-done
-```
+    for server in "${DNS_SERVERS[@]}"; do
+        response_time=$(dig +stats @$server $DOMAIN | grep "Query time:" | awk '{print $4}')
+        
+        if [ "$response_time" -gt "$THRESHOLD" ]; then
+            echo "ALERT: DNS server $server slow response: ${response_time}ms"
+            # Send alert (email, Slack, PagerDuty, etc.)
+        fi
+    done
 
 ### Common DNS Issues and Solutions
 
@@ -433,45 +431,51 @@ done
 
 ### Terraform Example
 
-```hcl
-resource "cloudflare_record" "api" {
-  zone_id = var.cloudflare_zone_id
-  name    = "api"
-  value   = "192.168.1.10"
-  type    = "A"
-  ttl     = 300
-}
-
-resource "cloudflare_record" "www" {
-  zone_id = var.cloudflare_zone_id
-  name    = "www"
-  value   = "example.com"
-  type    = "CNAME"
-  ttl     = 1
-}
-```
+    resource "cloudflare_record" "api" {
+      zone_id = var.cloudflare_zone_id
+      name    = "api"
+      value   = "192.168.1.10"
+      type    = "A"
+      ttl     = 300
+    }
+    
+    resource "cloudflare_record" "www" {
+      zone_id = var.cloudflare_zone_id
+      name    = "www"
+      value   = "example.com"
+      type    = "CNAME"
+      ttl     = 1
+    }
 
 ## Learning Resources
 
 ### **Interactive Learning**
+
+
 - **[DNS Learning Game](https://messwithdns.net/)** - Interactive DNS experiments and learning
+
+
 - **[How DNS Works - Comic](https://howdns.works/)** - Visual explanation of DNS concepts
 
 ### **Technical Documentation**  
+
 - **[What Is A Name Server? | Forbes Advisor](https://www.forbes.com/advisor/business/software/what-is-a-name-server/)** - Comprehensive name server explanation
 - **[What is a Domain Name? | MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_domain_name)** - Domain structure and management
 - **[What is a URL? | MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)** - Complete URL breakdown
 
 ### **DNS Security Resources**
+
 - **[DNSSEC Guide | Cloudflare](https://www.cloudflare.com/dns/dnssec/)** - DNS security implementation
 - **[DNS Security Best Practices | NIST](https://csrc.nist.gov/publications/detail/sp/800-81/2/final)** - Official security guidelines
 
 ### **Monitoring and Tools**
+
 - **[DNS Checker](https://dnschecker.org/)** - Global DNS propagation checking
 - **[MXToolbox](https://mxtoolbox.com/)** - Comprehensive DNS and email testing
 - **[WhatsMyDNS](https://www.whatsmydns.net/)** - DNS propagation checker
 
 ### **Infrastructure as Code**
+
 - **[Terraform DNS Providers](https://registry.terraform.io/browse/providers?category=dns)** - DNS automation with Terraform
 - **[External DNS for Kubernetes](https://github.com/kubernetes-sigs/external-dns)** - Kubernetes DNS automation
 
@@ -480,21 +484,25 @@ resource "cloudflare_record" "www" {
 DNS expertise is valuable for:
 
 ### **Site Reliability Engineering**
+
 - Implement DNS-based service discovery
 - Design fault-tolerant DNS architectures  
 - Monitor and troubleshoot DNS performance issues
 
 ### **DevOps Engineering**
+
 - Automate DNS management in CI/CD pipelines
 - Implement blue-green deployments using DNS
 - Configure load balancing and traffic routing
 
 ### **Cloud Architecture**
+
 - Design multi-region DNS strategies
 - Implement DNS-based disaster recovery
 - Optimize global content delivery
 
 ### **Security Engineering**
+
 - Implement DNSSEC and DNS filtering
 - Monitor for DNS-based attacks
 - Design secure DNS infrastructures
@@ -517,16 +525,19 @@ With domain and DNS knowledge, you're ready to:
 ## References and Further Reading
 
 ### **Primary Sources**
+
 1. **[RFC 1034 - Domain Names Concepts](https://tools.ietf.org/html/rfc1034)** - Original DNS specification
-2. **[RFC 1035 - Domain Names Implementation](https://tools.ietf.org/html/rfc1035)** - DNS implementation details  
-3. **[Internet Corporation for Assigned Names and Numbers (ICANN)](https://www.icann.org/)** - Domain name governance
+1. **[RFC 1035 - Domain Names Implementation](https://tools.ietf.org/html/rfc1035)** - DNS implementation details  
+1. **[Internet Corporation for Assigned Names and Numbers (ICANN)](https://www.icann.org/)** - Domain name governance
 
 ### **Security Standards**
-4. **[RFC 4033 - DNSSEC Introduction](https://tools.ietf.org/html/rfc4033)** - DNS security extensions
-5. **[DNS over HTTPS (DoH) - RFC 8484](https://tools.ietf.org/html/rfc8484)** - Encrypted DNS queries
-6. **[DNS Security Extensions (DNSSEC) Deployment Guide](https://www.nist.gov/publications/secure-domain-name-system-dns-deployment-guide)** - NIST implementation guide
+
+1. **[RFC 4033 - DNSSEC Introduction](https://tools.ietf.org/html/rfc4033)** - DNS security extensions
+1. **[DNS over HTTPS (DoH) - RFC 8484](https://tools.ietf.org/html/rfc8484)** - Encrypted DNS queries
+1. **[DNS Security Extensions (DNSSEC) Deployment Guide](https://www.nist.gov/publications/secure-domain-name-system-dns-deployment-guide)** - NIST implementation guide
 
 ### **Modern DNS Technologies**
-7. **[Cloudflare DNS Documentation](https://developers.cloudflare.com/dns/)** - Modern DNS service features
-8. **[AWS Route 53 Best Practices](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-dns.html)** - Cloud DNS management
-9. **[Google Cloud DNS Documentation](https://cloud.google.com/dns/docs)** - Enterprise DNS solutions
+
+1. **[Cloudflare DNS Documentation](https://developers.cloudflare.com/dns/)** - Modern DNS service features
+1. **[AWS Route 53 Best Practices](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-dns.html)** - Cloud DNS management
+1. **[Google Cloud DNS Documentation](https://cloud.google.com/dns/docs)** - Enterprise DNS solutions

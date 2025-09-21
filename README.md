@@ -24,17 +24,15 @@ If you're looking for a simpler version without the advanced topics and detailed
 
 To run this documentation locally:
 
-```bash
-# Clone the repository
-git clone https://github.com/mtahle/DevOps-Foundation-Roadmap.git
-cd DevOps-Foundation-Roadmap
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Serve locally
-mkdocs serve
-```
+    # Clone the repository
+    git clone https://github.com/mtahle/DevOps-Foundation-Roadmap.git
+    cd DevOps-Foundation-Roadmap
+    
+    # Install dependencies
+    pip install -r requirements.txt
+    
+    # Serve locally
+    mkdocs serve
 
 Then visit `http://localhost:8000` in your browser.
 
