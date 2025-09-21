@@ -18,45 +18,47 @@ DNS (Domain Name System) is often called the "phonebook of the internet." It tra
 
 ### DNS Resolution Process
 
-    sequenceDiagram
-        participant U as Browser
-        participant R as DNS Resolver
-        participant Root as Root DNS
-        participant TLD as TLD Server
-        participant Auth as Auth Server
-        participant Web as Web Server
-        
-        U->>+R: Query: example.com
-        R->>+Root: Query .com servers
-        Root-->>-R: TLD server list
-        R->>+TLD: Query example.com
-        TLD-->>-R: Auth nameservers
-        R->>+Auth: Query IP
-        Auth-->>-R: IP: 192.0.2.1
-        R-->>-U: Return IP
-        U->>+Web: HTTP Request
-        Web-->>-U: Response
+  ```mermaid
+sequenceDiagram
+    participant U as Browser
+    participant R as DNS Resolver
+    participant Root as Root DNS
+    participant TLD as TLD Server
+    participant Auth as Auth Server
+    participant Web as Web Server
+
+    U->>+R: Query: example.com
+    R->>+Root: Query .com servers
+    Root-->>-R: TLD server list
+    R->>+TLD: Query example.com
+    TLD-->>-R: Auth nameservers
+    R->>+Auth: Query IP
+    Auth-->>-R: IP: 192.0.2.1
+    R-->>-U: Return IP
+    U->>+Web: HTTP Request
+    Web-->>-U: Response
+```
 
 ### DNS Hierarchy
 
 ```mermaid
 graph TD
-    subgraph DNS_Hierarchy
-        A[Root (.)] --> B[gTLD (.com)]
-        A --> C[ccTLD (.uk)]
-        A --> D[New gTLD (.org)]
-        
-        B --> E[example.com]
-        E --> F[www.example.com]
-        E --> G[api.example.com]
-        E --> H[mail.example.com]
+    subgraph "DNS Hierarchy"
+        A["Root (.)"] --> B["gTLD (.com)"]
+        A --> C["ccTLD (.uk)"]
+        A --> D["New gTLD (.org)"]
+
+        B --> E["example.com"]
+        E --> F["www.example.com"]
+        E --> G["api.example.com"]
+        E --> H["mail.example.com"]
     end
-    
+
     classDef root fill:#ff9999
     classDef tld fill:#99ccff
     classDef domain fill:#99ff99
     classDef sub fill:#ffff99
-    
+
     class A root
     class B,C,D tld
     class E domain
@@ -91,20 +93,20 @@ graph TD
 - **Subdomains**: `api`, `blog`, `www`, `mail`
 
 ### URL Structure and Components
+```mermaid
+  flowchart LR
+    A["Protocol://"] --> B["Subdomain."]
+    B --> C["Domain."]
+    C --> D["TLD"]
+    D --> E[":Port"]
+    E --> F["/Path"]
+    F --> G["?Query"]
+    G --> H["#Fragment"]
 
-    flowchart LR
-        A[Protocol://] --> B[Subdomain.]
-        B --> C[Domain.]
-        C --> D[TLD]
-        D --> E[:Port]
-        E --> F[/Path]
-        F --> G[?Query]
-        G --> H[#Fragment]
-        
-        style A fill:#e3f2fd
-        style C fill:#e8f5e8
-        style F fill:#fff3e0
-
+    style A fill:#e3f2fd
+    style C fill:#e8f5e8
+    style F fill:#fff3e0
+```
 #### **URL Components Explained**
 
     https://api.staging.example.com:8443/v1/users?limit=10&page=2#results
@@ -120,7 +122,7 @@ graph TD
 ## Name Servers and DNS Records
 
 ### Name Server Types
-
+ ```mermaid
     flowchart TB
         subgraph "DNS Infrastructure"
             A[Root Nameservers<br/>13 globally distributed]
@@ -140,7 +142,7 @@ graph TD
         style B fill:#99ccff
         style C fill:#99ff99
         style D fill:#ffff99
-
+ ```
 #### **Authoritative Name Servers**
 
 - **Primary (Master)**: Contains the original zone file
@@ -210,6 +212,7 @@ flowchart LR
 
 ### Environment-Based Subdomains
 
+ ```mermaid
     flowchart TB
         subgraph "Production Environment"
             A[app.example.com]
@@ -232,7 +235,8 @@ flowchart LR
         style A fill:#e8f5e8
         style D fill:#fff3e0  
         style G fill:#e3f2fd
-
+ ```
+ 
 ### Load Balancing Strategies
 
 #### **DNS Round Robin**
@@ -347,6 +351,7 @@ flowchart LR
 
 ### DNS Performance Monitoring
 
+ ```mermaid
     flowchart TB
         A[DNS Query] --> B{Response Time}
         B -->|< 50ms| C[Excellent]
@@ -362,7 +367,8 @@ flowchart LR
         style D fill:#fff3e0
         style E fill:#ffeb3b
         style F fill:#ffcdd2
-
+ ```
+ 
 #### **Monitoring Scripts**
 
     #!/bin/bash
@@ -426,6 +432,7 @@ flowchart LR
 ## Infrastructure as Code for DNS
 
 ### Terraform Example
+
 
     resource "cloudflare_record" "api" {
       zone_id = var.cloudflare_zone_id
