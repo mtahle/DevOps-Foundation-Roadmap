@@ -128,42 +128,33 @@ nav:
   - Home: index.md
   - Fundamentals:
     - concepts/index.md
-    - DevOps Overview: concepts/overview.md
-    - Culture & Practices: concepts/culture.md
-    - Development Lifecycle: concepts/lifecycle.md
-  - Linux & Basics:
+    - Internet Basics: concepts/internet-basics.md
+    - Web Development: concepts/web-development.md
+    - Domains & DNS: concepts/domains-dns.md
+    - Internet Protocols: concepts/protocols.md
+    - SSL/TLS: concepts/ssl.md
+    - Web Hosting: concepts/hosting.md
+  - Linux & Systems:
     - linux/index.md
     - Linux Introduction: linux/introduction.md
-    - Command Line: linux/command-line.md
-    - System Administration: linux/system-admin.md
-    - Networking: linux/networking.md
-    - Security: linux/security.md
+    - Web Hosting: linux/web-hosting.md
+    - Advanced Hosting: linux/advanced-hosting.md
+    - Troubleshooting Tools: linux/troubleshooting-tools.md
   - Containers & Orchestration:
     - containers/index.md
     - Container Introduction: containers/introduction.md
-    - Advanced Docker: containers/advanced-docker.md
-    - Kubernetes: containers/kubernetes.md
     - Container Security: containers/security.md
-    - Monitoring: containers/monitoring.md
+    - Kubernetes Production: containers/kubernetes-production.md
   - Automation & CI/CD:
     - automation/index.md
-    - CI/CD Introduction: automation/cicd.md
-    - Jenkins: automation/jenkins.md
-    - GitHub Actions: automation/github-actions.md
-    - GitLab CI: automation/gitlab-ci.md
-    - Infrastructure as Code: automation/iac.md
+    - Automation Introduction: automation/introduction.md
+    - Container CI/CD: automation/container-cicd.md
   - Monitoring & Observability:
     - monitoring/index.md
-    - Monitoring Fundamentals: monitoring/fundamentals.md
-    - Prometheus & Grafana: monitoring/prometheus-grafana.md
-    - Log Aggregation: monitoring/logging.md
-    - Distributed Tracing: monitoring/tracing.md
+    - Monitoring Introduction: monitoring/introduction.md
   - Resources & References:
     - resources/index.md
-    - Useful Books: resources/books.md
-    - Training Courses: resources/courses.md
-    - Blogs & Websites: resources/blogs.md
-    - Certifications: resources/certifications.md
+    - Podcasts: resources/podcast.md
 
 # Copyright
 copyright: Copyright &copy; 2024 Mujahed Altahleh
