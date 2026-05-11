@@ -401,9 +401,7 @@ monitoring:
 
 After implementing monitoring and observability:
 
-- Advanced Alerting and Monitoring strategies
-- Performance Tuning techniques
-- Incident Management processes
+- [Advanced & Emerging Topics](../advanced/index.md) — GitOps, platform engineering, resilience engineering, and more
 
 !!! success "DevOps Integration"
     Effective monitoring and observability enable faster incident response, better system understanding, and data-driven improvements. They are essential for maintaining reliable, high-performance systems in production.

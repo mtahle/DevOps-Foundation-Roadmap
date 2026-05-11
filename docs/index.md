@@ -52,5 +52,5 @@ Build robust monitoring and observability solutions.
 
 This roadmap is supported by the "DevOps on the Go" podcast community. Join us for regular discussions, updates, and expert insights.
 
-[Get Started →](concepts/internet-basics.md){ .md-button .md-button--primary }
+[Get Started →](introduction/index.md){ .md-button .md-button--primary }
 
