@@ -191,46 +191,43 @@ extra:
 nav:
   - Home: index.md
   - Foundations:
-      - introduction/index.md
+      - Foundations Overview: introduction/index.md
       - History & Evolution: introduction/history.md
       - What DevOps Means: introduction/meaning.md
       - CALMS Framework: introduction/calms.md
       - Core Practices & Principles: introduction/practices.md
       - Culture & Collaboration: introduction/culture.md
-      - CALMS: foundations/calms.md
-      - DevOps Practices: foundations/devops-practices.md
-      - History: foundations/history.md
   - Network & Web Fundamentals:
-    - concepts/index.md
-    - Internet Basics: concepts/internet-basics.md
-    - Web Development Basics: concepts/web-development.md
-    - Domains & DNS: concepts/domains-dns.md
-    - Internet Protocols: concepts/protocols.md
-    - SSL/TLS: concepts/ssl.md
-    - Web Hosting Concepts: concepts/hosting.md
+      - concepts/index.md
+      - Internet Basics: concepts/internet-basics.md
+      - Web Development Basics: concepts/web-development.md
+      - Domains & DNS: concepts/domains-dns.md
+      - Internet Protocols: concepts/protocols.md
+      - SSL/TLS: concepts/ssl.md
+      - Web Hosting Concepts: concepts/hosting.md
   - Linux & Systems:
-    - linux/index.md
-    - Linux Introduction: linux/introduction.md
-    - Web Hosting (Linux Focus): linux/web-hosting.md
-    - Advanced Hosting: linux/advanced-hosting.md
-    - Troubleshooting Tools: linux/troubleshooting-tools.md
+      - linux/index.md
+      - Linux Introduction: linux/introduction.md
+      - Web Hosting (Linux Focus): linux/web-hosting.md
+      - Advanced Hosting: linux/advanced-hosting.md
+      - Troubleshooting Tools: linux/troubleshooting-tools.md
   - Containers & Orchestration:
-    - containers/index.md
-    - Container Introduction: containers/introduction.md
-    - Container Security: containers/security.md
-    - Kubernetes Production: containers/kubernetes-production.md
+      - containers/index.md
+      - Container Introduction: containers/introduction.md
+      - Container Security: containers/security.md
+      - Kubernetes Production: containers/kubernetes-production.md
   - Automation & CI/CD:
-    - automation/index.md
-    - Automation Introduction: automation/introduction.md
-    - Container CI/CD: automation/container-cicd.md
+      - automation/index.md
+      - Automation Introduction: automation/introduction.md
+      - Container CI/CD: automation/container-cicd.md
   - Monitoring & Observability:
-    - monitoring/index.md
-    - Monitoring Introduction: monitoring/introduction.md
+      - monitoring/index.md
+      - Monitoring Introduction: monitoring/introduction.md
   - Advanced & Emerging:
-    - advanced/index.md
+      - advanced/index.md
   - Resources & References:
-    - resources/index.md
-    - Podcasts: resources/podcast.md
+      - resources/index.md
+      - Podcasts: resources/podcast.md
 
 # Copyright
 copyright: Copyright &copy; 2025 Mujahed Altahleh

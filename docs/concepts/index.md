@@ -63,3 +63,5 @@ Understanding these fundamentals is crucial for DevOps because:
 - **Automation**: You'll automate deployment and infrastructure tasks
 
 Let's start building your DevOps foundation.
+
+[Start with Internet Basics →](internet-basics.md){ .md-button .md-button--primary }
