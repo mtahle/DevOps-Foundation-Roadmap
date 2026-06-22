@@ -689,9 +689,8 @@ echo "- Caching: Redis/Memcached for > 200 RPS"
 
 After implementing advanced hosting solutions:
 
-- Container Orchestration with Kubernetes
-- [Infrastructure as Code](../automation/introduction.md)
-- [Advanced Monitoring](../monitoring/introduction.md)
+- [Network Troubleshooting Tools](troubleshooting-tools.md)
+- [Containers & Orchestration](../containers/index.md) - next major section
 
 !!! tip "Best Practices"
     - Always implement redundancy for critical services

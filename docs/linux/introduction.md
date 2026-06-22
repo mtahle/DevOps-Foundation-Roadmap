@@ -155,9 +155,9 @@ Host myserver
 
 After mastering Linux basics, explore:
 
-1. [Network Troubleshooting Tools](troubleshooting-tools.md)
-2. [Self-Managed Web Hosting](web-hosting.md) 
-3. [Advanced Hosting Solutions](advanced-hosting.md)
+1. [Self-Managed Web Hosting](web-hosting.md)
+2. [Advanced Hosting Solutions](advanced-hosting.md)
+3. [Network Troubleshooting Tools](troubleshooting-tools.md)
 
 ## Practical Exercises
 

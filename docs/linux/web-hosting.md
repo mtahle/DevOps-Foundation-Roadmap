@@ -603,8 +603,7 @@ sudo systemctl restart apache2
 After setting up self-managed hosting, explore:
 
 - [Advanced Hosting Solutions](advanced-hosting.md)
-- [Container-Based Hosting](../containers/introduction.md)
-- [Monitoring Web Applications](../monitoring/introduction.md)
+- [Network Troubleshooting Tools](troubleshooting-tools.md)
 
 !!! warning "Production Security"
     - Keep all software updated with security patches

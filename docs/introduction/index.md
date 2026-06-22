@@ -17,7 +17,6 @@ This foundational section establishes the mindset, principles, and cultural unde
 3. CALMS Framework
 4. Core Practices & Principles
 5. Culture & Collaboration
-6. Metrics, Feedback, and Continuous Improvement (future section)
 
 > As you progress, refer back here to re-anchor decisions in foundational principles rather than tools.
 

@@ -1,4 +1,4 @@
-# DevOps Fundamentals
+# Network & Web Fundamentals
 
 Welcome to the DevOps Fundamentals section! This section covers the essential concepts and technologies that form the foundation of modern DevOps practices.
 

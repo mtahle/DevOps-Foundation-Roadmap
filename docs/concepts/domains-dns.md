@@ -517,7 +517,6 @@ With domain and DNS knowledge, you're ready to:
 
 - [Internet Protocols](protocols.md) - Deep dive into HTTP, TCP/IP, and networking
 - [SSL Certificates](ssl.md) - Implement secure connections for your domains
-- [Web Development](web-development.md) - Apply DNS concepts in application development
 - [Linux Server Management](../linux/introduction.md) - Configure DNS on production servers
 
 !!! tip "Practical Exercise"

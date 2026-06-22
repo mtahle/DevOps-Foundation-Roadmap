@@ -47,3 +47,5 @@ Automation and CI/CD are crucial for DevOps because:
 - **Risk Reduction**: Smaller, more frequent, less risky deployments
 
 You are now prepared to establish observability and reliability foundations.
+
+[Start with Automation Introduction →](introduction.md){ .md-button .md-button--primary }

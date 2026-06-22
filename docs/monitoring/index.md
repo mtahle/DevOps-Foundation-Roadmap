@@ -29,12 +29,7 @@ Learn monitoring fundamentals, metrics collection, and observability principles.
 
 ```mermaid
 flowchart LR
-    A[Monitoring Introduction] --> B[Advanced Monitoring]
-    A --> C[Alerting & Response]
-    A --> D[Log Management]
-    B --> E[Observability]
-    C --> E
-    D --> E
+    A[Monitoring Introduction] --> B[Advanced & Emerging Topics]
 ```
 
 ## Why This Matters
