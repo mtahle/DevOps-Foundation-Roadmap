@@ -21,8 +21,8 @@ These practices operationalize DevOps values and create sustainable delivery per
 - Continuous Delivery (automated promotion, environment parity)
 - Infrastructure as Code & Immutable artifacts
 - Configuration Management + Secret Management hygiene
-- GitOps for reconciliation (future advanced topic placeholder): This will include practices like declarative configurations, reconciliation loops, and tools such as Argo CD.
-- Policy as Code for compliance (placeholder): This will cover automated policy enforcement using tools like OPA and Conftest, with examples for CI/CD pipelines.
+- GitOps for reconciliation (declarative configurations, reconciliation loops, Argo CD)
+- Policy as Code for compliance (automated policy enforcement via OPA / Conftest)
 
 ## Reliability & Resilience
 

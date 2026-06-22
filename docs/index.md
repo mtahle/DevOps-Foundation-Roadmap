@@ -14,23 +14,27 @@ This roadmap is based on content from the [5th episode of DevOps on the Go podca
 
 This roadmap is designed to be followed sequentially for maximum benefit. Each section builds upon the previous one, creating a solid foundation for DevOps mastery.
 
-### 1. **Fundamental Concepts**
+### 1. **Foundations**
 
-Understanding how the internet works, web development basics, and essential protocols.
+What DevOps is, where it came from, the CALMS framework, core practices, and culture.
 
-### 2. **Linux & Server Management**
+### 2. **Network & Web Fundamentals**
+
+How the internet works, web development basics, DNS, protocols, SSL, and hosting.
+
+### 3. **Linux & Server Management**
 
 Master Linux systems, server administration, and hosting solutions.
 
-### 3. **Containerization & Orchestration**
+### 4. **Containerization & Orchestration**
 
 Learn Docker, Kubernetes, and modern container technologies.
 
-### 4. **Automation & CI/CD**
+### 5. **Automation & CI/CD**
 
 Implement continuous integration, delivery, and infrastructure as code.
 
-### 5. **Monitoring & Observability**
+### 6. **Monitoring & Observability**
 
 Build robust monitoring and observability solutions.
 

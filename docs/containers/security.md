@@ -902,8 +902,7 @@ podman-compose up -d
 After mastering container security and advanced topics:
 
 - [Kubernetes Production Deployment](kubernetes-production.md)
-- [Container CI/CD Pipelines](../automation/container-cicd.md)
-- Service Mesh Implementation (Istio, Linkerd)
+- [Advanced Topics: Service Mesh & Beyond](../advanced/index.md)
 
 !!! warning "Security Reminders"
     - Never run containers as root in production

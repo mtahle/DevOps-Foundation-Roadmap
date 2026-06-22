@@ -57,3 +57,5 @@ Linux skills are essential for DevOps because:
 - **Monitoring**: System monitoring and log analysis on Linux systems
 
 Proceed when you are comfortable with these Linux fundamentals.
+
+[Start with Linux Introduction →](introduction.md){ .md-button .md-button--primary }

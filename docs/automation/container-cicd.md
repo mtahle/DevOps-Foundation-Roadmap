@@ -1089,9 +1089,8 @@ spec:
 
 After implementing container CI/CD pipelines:
 
-- Advanced Deployment Strategies (blue-green, canary deployments)
-- Infrastructure as Code with Terraform and Ansible
 - [Monitoring and Observability](../monitoring/introduction.md)
+- [Advanced & Emerging Topics](../advanced/index.md) - GitOps, progressive delivery, IaC at scale
 
 !!! tip "CI/CD Best Practices"
     - Implement comprehensive testing at every stage

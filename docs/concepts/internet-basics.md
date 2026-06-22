@@ -292,8 +292,8 @@ Understanding internet fundamentals positions you for roles in:
 Once you understand internet basics, proceed to learn about:
 
 - [Web Development Fundamentals](web-development.md)
-- [Internet Protocols](protocols.md)  
 - [Domain Names & DNS](domains-dns.md)
+- [Internet Protocols](protocols.md)
 
 !!! tip "Learning Tip"
     Take time to understand these fundamentals - they form the foundation for everything else in DevOps! Practice with the command-line tools and try setting up a simple network lab using VirtualBox or VMware.

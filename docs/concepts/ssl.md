@@ -94,9 +94,8 @@ timeline
 
 With SSL knowledge, you're ready to:
 
-- [Explore Domain Management](domains-dns.md)
+- [Web Hosting Concepts](hosting.md) - Explore hosting options and deployment infrastructure
 - [Set up Linux Servers](../linux/introduction.md) with proper SSL configuration
-- [Implement Container Security](../containers/security.md)
 
 !!! info "DevOps Integration"
     SSL certificate management is a critical component of infrastructure automation, security compliance, and application deployment pipelines.

@@ -224,9 +224,7 @@ fi
 
 Master these troubleshooting tools, then move on to:
 
-- [Self-Managed Web Hosting](web-hosting.md)
-- [Advanced Hosting Solutions](advanced-hosting.md)
-- [Container Networking](../containers/introduction.md)
+- [Containers & Orchestration](../containers/index.md) - next major section
 
 !!! tip "Best Practices"
     - Always start with basic connectivity (ping)

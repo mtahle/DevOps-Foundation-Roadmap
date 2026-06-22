@@ -620,10 +620,10 @@ Once comfortable with basics, explore:
 
 After mastering web development fundamentals, proceed to:
 
-- [Hosting Solutions](hosting.md) - Learn about different hosting options and deployment strategies
+- [Domain Names & DNS](domains-dns.md) - Learn how domain resolution works
 - [Internet Protocols](protocols.md) - Deep dive into HTTP, TCP/IP, and other essential protocols
 - [SSL Certificates](ssl.md) - Understand security and encryption for web applications
-- [Domain Names & DNS](domains-dns.md) - Learn how domain resolution works
+- [Hosting Solutions](hosting.md) - Learn about different hosting options and deployment strategies
 
 !!! tip "Practical Exercise"
     **Try This**: Create a simple web application using your preferred technology stack, set up a Git repository, implement a basic CI/CD pipeline using GitHub Actions, and deploy it to a cloud platform like Netlify or Vercel.

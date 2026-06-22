@@ -1014,9 +1014,8 @@ spec:
 
 After mastering production Kubernetes deployment:
 
-- Service Mesh Deep Dive (Istio, Linkerd)
-- Multi-Cloud Kubernetes deployment
-- Kubernetes Cost Optimization strategies
+- [Automation & CI/CD](../automation/index.md) - next major section
+- [Advanced & Emerging Topics](../advanced/index.md) - service mesh, multi-cloud, FinOps, and more
 
 !!! warning "Production Checklist"
     - [ ] High availability control plane

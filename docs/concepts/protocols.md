@@ -98,15 +98,14 @@ graph LR
 
 #### **Special IP Addresses**
 
-    # View certificate information
-    openssl x509 -text -noout -in certificate.crt
-    
-    # Generate CSR
-    openssl req -new -key private.key -out server.csr
-    
-    # Generate self-signed certificate
-    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-        -keyout private.key -out certificate.crt
+| Address / Range | Purpose |
+|----------------|---------|
+| `127.0.0.0/8` | Loopback — traffic stays on the local host (`127.0.0.1` = localhost) |
+| `0.0.0.0` | Unspecified — used by hosts before they obtain an IP address |
+| `255.255.255.255` | Limited broadcast — reaches all hosts on the local network segment |
+| `169.254.0.0/16` | Link-local (APIPA) — auto-assigned when DHCP is unavailable |
+| `100.64.0.0/10` | Carrier-grade NAT shared address space (RFC 6598) |
+| `224.0.0.0/4` | Multicast — one sender, many receivers |
 
 ### IPv6 Addressing
 
@@ -750,8 +749,7 @@ Protocol expertise is essential for:
 Understanding protocols enables you to:
 
 - [Configure SSL Certificates](ssl.md) - Implement secure HTTPS communications
-- [Manage Domain Names & DNS](domains-dns.md) - Configure reliable name resolution
-- [Web Development Fundamentals](web-development.md) - Apply protocol knowledge in applications
+- [Web Hosting Concepts](hosting.md) - Explore hosting options and infrastructure
 - [Linux Server Management](../linux/introduction.md) - Configure and secure production servers
 
 !!! tip "Practical Exercise"
