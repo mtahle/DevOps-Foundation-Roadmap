@@ -8,7 +8,7 @@ Understanding CI/CD principles is essential before choosing tools and implementi
 
 ### Core CI/CD Concepts
 
-- **[CI/CD concepts | GitLab](https://docs.gitlab.com/ee/ci/introduction/)**
+- **[CI/CD concepts | GitLab - What is CI/CD?](https://about.gitlab.com/topics/ci-cd/)**
   
   Comprehensive introduction to CI/CD concepts, benefits, and best practices.
 
